@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AgentNXXT — AI & Automation Lab</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #050508;
+    --surface: #0d0d14;
+    --border: #1a1a2e;
+    --accent1: #00f5c4;
+    --accent2: #7b2fff;
+    --accent3: #ff3d6e;
+    --text: #e8e8f0;
+    --muted: #6b6b82;
+    --card: #0f0f1a;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'IBM Plex Mono', monospace;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    cursor: crosshair;
+  }
+
+  /* NOISE OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.4;
+  }
+
+  /* GRID BACKGROUND */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0,245,196,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,245,196,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    padding: 1.2rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5,5,8,0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo span {
+    color: var(--accent1);
+  }
+
+  .logo-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--accent1);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+  }
+
+  nav ul a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  nav ul a:hover { color: var(--accent1); }
+
+  .nav-cta {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--accent1);
+    color: var(--accent1) !important;
+    border-radius: 2px;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: rgba(0,245,196,0.1) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 4rem 4rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+  }
+
+  .orb1 {
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(123,47,255,0.15) 0%, transparent 70%);
+    top: -100px; right: -100px;
+    animation: drift 8s ease-in-out infinite;
+  }
+
+  .orb2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,245,196,0.1) 0%, transparent 70%);
+    bottom: 100px; left: 200px;
+    animation: drift 10s ease-in-out infinite reverse;
+  }
+
+  @keyframes drift {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+  }
+
+  .hero-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent1);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: inline-block;
+    width: 30px; height: 1px;
+    background: var(--accent1);
+  }
+
+  .hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3.5rem, 9vw, 8rem);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -0.04em;
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+  }
+
+  .hero h1 .line2 {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(232,232,240,0.3);
+  }
+
+  .hero h1 .line3 {
+    display: block;
+    background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .hero-sub {
+    margin-top: 2.5rem;
+    max-width: 500px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: var(--muted);
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-actions {
+    margin-top: 3rem;
+    display: flex;
+    gap: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-primary {
+    padding: 0.85rem 2rem;
+    background: var(--accent1);
+    color: var(--bg);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0,245,196,0.3);
+  }
+
+  .btn-ghost {
+    padding: 0.85rem 2rem;
+    background: transparent;
+    color: var(--text);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .btn-ghost:hover { border-color: var(--accent1); color: var(--accent1); }
+
+  .hero-stats {
+    position: absolute;
+    right: 4rem;
+    bottom: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: 1;
+  }
+
+  .stat {
+    text-align: right;
+    border-right: 2px solid var(--accent1);
+    padding-right: 1rem;
+  }
+
+  .stat-number {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 0.3rem;
+  }
+
+  /* SCROLL INDICATOR */
+  .scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--muted);
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    z-index: 1;
+  }
+
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--muted);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scroll-line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    background: var(--accent1);
+    animation: scanline 1.5s ease-in-out infinite;
+  }
+
+  @keyframes scanline {
+    0% { left: -50%; }
+    100% { left: 150%; }
+  }
+
+  /* SECTIONS */
+  section {
+    position: relative;
+    z-index: 1;
+  }
+
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent1);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    margin-bottom: 1.5rem;
+  }
+
+  /* WHAT WE DO */
+  .what {
+    padding: 8rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+
+  .what-left .section-title span {
+    display: block;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--border);
+  }
+
+  .what-desc {
+    color: var(--muted);
+    font-size: 0.85rem;
+    line-height: 1.9;
+    margin-top: 1.5rem;
+    max-width: 420px;
+  }
+
+  .what-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .what-card {
+    background: var(--card);
+    padding: 2rem 1.5rem;
+    transition: background 0.3s;
+    cursor: default;
+  }
+
+  .what-card:hover { background: #14141f; }
+
+  .what-card-icon {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .what-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .what-card p {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 8rem 4rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+
+  .service-card {
+    border: 1px solid var(--border);
+    padding: 2.5rem 2rem;
+    position: relative;
+    transition: border-color 0.3s, transform 0.3s;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent1), var(--accent2));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover {
+    border-color: rgba(0,245,196,0.2);
+    transform: translateY(-4px);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-num {
+    font-size: 0.65rem;
+    color: var(--accent1);
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  /* PRODUCTS */
+  .products {
+    padding: 8rem 4rem;
+  }
+
+  .products-header {
+    margin-bottom: 4rem;
+  }
+
+  .products-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+
+  .product-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 1fr auto;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    border-bottom: 1px solid var(--border);
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .product-row:last-child { border-bottom: none; }
+  .product-row:hover { background: var(--card); }
+
+  .product-index {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+
+  .product-name {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  .product-desc {
+    font-size: 0.75rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .product-badge {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    padding: 0.3rem 0.8rem;
+    text-transform: uppercase;
+  }
+
+  .badge-new { border: 1px solid var(--accent1); color: var(--accent1); }
+  .badge-beta { border: 1px solid var(--accent2); color: var(--accent2); }
+  .badge-live { border: 1px solid var(--accent3); color: var(--accent3); }
+
+  /* TECH STACK */
+  .tech {
+    padding: 6rem 4rem;
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+  }
+
+  .tech-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 3rem;
+  }
+
+  .tech-scroll {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-pill {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--border);
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+
+  .tech-pill:hover {
+    border-color: var(--accent1);
+    color: var(--accent1);
+    background: rgba(0,245,196,0.05);
+  }
+
+  .tech-pill.highlight {
+    border-color: rgba(0,245,196,0.3);
+    color: var(--accent1);
+  }
+
+  /* GARTNER */
+  .gartner {
+    padding: 8rem 4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .gartner-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 4rem;
+  }
+
+  .gartner-cell {
+    background: var(--bg);
+    padding: 2rem 1.5rem;
+  }
+
+  .gartner-cell h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent1);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .gartner-cell ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .gartner-cell ul li {
+    font-size: 0.68rem;
+    color: var(--muted);
+    line-height: 1.4;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--border);
+  }
+
+  /* CTA */
+  .cta {
+    padding: 8rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-bg {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(123,47,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .cta .section-title {
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    max-width: 700px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .cta p {
+    color: var(--muted);
+    font-size: 0.85rem;
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  /* FOOTER */
+  footer {
+    padding: 4rem;
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .footer-brand .logo { margin-bottom: 1rem; }
+
+  .footer-brand p {
+    font-size: 0.72rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 280px;
+    margin-bottom: 1.5rem;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .social-link {
+    width: 32px; height: 32px;
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .social-link:hover {
+    border-color: var(--accent1);
+    color: var(--accent1);
+  }
+
+  .footer-col h5 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .footer-col ul a {
+    font-size: 0.72rem;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: var(--accent1); }
+
+  .footer-bottom {
+    padding: 1.5rem 4rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-bottom p {
+    font-size: 0.65rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  .footer-bottom span { color: var(--accent1); }
+
+  /* CURSOR GLOW */
+  .cursor-glow {
+    position: fixed;
+    width: 300px; height: 300px;
+    pointer-events: none;
+    z-index: 9998;
+    background: radial-gradient(circle, rgba(0,245,196,0.04) 0%, transparent 70%);
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s;
+    border-radius: 50%;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero > * {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-tag { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.2s; }
+  .hero-sub { animation-delay: 0.35s; }
+  .hero-actions { animation-delay: 0.5s; }
+  .hero-stats { animation-delay: 0.6s; }
+  .scroll-hint { animation-delay: 0.8s; }
+
+  /* TICKER */
+  .ticker {
+    background: var(--accent1);
+    padding: 0.6rem 0;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .ticker-inner {
+    display: inline-flex;
+    gap: 3rem;
+    animation: ticker 20s linear infinite;
+  }
+
+  .ticker span {
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--bg);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+</head>
+<body>
+
+<div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-dot"></div>
+    Agent<span>NXXT</span>
+  </a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#tech">Tech</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb orb1"></div>
+  <div class="hero-orb orb2"></div>
+
+  <div class="hero-tag">AI & Automation Lab · OpenAutonomyx (OPC) Pvt. Ltd.</div>
+
+  <h1>
+    Build What<br>
+    <span class="line2">Comes</span>
+    <span class="line3">NXXT.</span>
+  </h1>
+
+  <p class="hero-sub">
+    We research, build, and deploy AI agents & automation solutions for individuals, businesses, and enterprises — redefining how work gets done.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#services" class="btn-primary">Explore Solutions →</a>
+    <a href="#about" class="btn-ghost">Who We Are</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-number">40+</div>
+      <div class="stat-label">Gartner Categories</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">6</div>
+      <div class="stat-label">Core Products</div>
+    </div>
+    <div class="stat">
+      <div class="stat-number">∞</div>
+      <div class="stat-label">Possibilities</div>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="scroll-line"></span>
+    Scroll
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span>AgentSkills</span><span>·</span>
+    <span>AgentCrews</span><span>·</span>
+    <span>AutonomyxGPTs</span><span>·</span>
+    <span>AutonomyxGems</span><span>·</span>
+    <span>UnboxdMCP</span><span>·</span>
+    <span>InfinityLM</span><span>·</span>
+    <span>AI Agents</span><span>·</span>
+    <span>LLMs</span><span>·</span>
+    <span>MCP Servers</span><span>·</span>
+    <span>Enterprise AI</span><span>·</span>
+    <span>AgentSkills</span><span>·</span>
+    <span>AgentCrews</span><span>·</span>
+    <span>AutonomyxGPTs</span><span>·</span>
+    <span>AutonomyxGems</span><span>·</span>
+    <span>UnboxdMCP</span><span>·</span>
+    <span>InfinityLM</span><span>·</span>
+    <span>AI Agents</span><span>·</span>
+    <span>LLMs</span><span>·</span>
+    <span>MCP Servers</span><span>·</span>
+    <span>Enterprise AI</span><span>·</span>
+  </div>
+</div>
+
+<!-- WHAT WE DO -->
+<section class="what" id="about">
+  <div class="what-left">
+    <div class="section-label">// what we do</div>
+    <h2 class="section-title">
+      AI that works<br>
+      <span>for every</span><br>
+      layer.
+    </h2>
+    <p class="what-desc">
+      From individual productivity to enterprise transformation — we build intelligent systems that adapt, automate, and accelerate. Research-driven. Product-obsessed. Results-focused.
+    </p>
+  </div>
+  <div class="what-right">
+    <div class="what-card">
+      <div class="what-card-icon">⚡</div>
+      <h3>AI R&D</h3>
+      <p>Cutting-edge research into AI products and systems that shape what's next.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">🤖</div>
+      <h3>Automation</h3>
+      <p>End-to-end automation solutions that eliminate friction from workflows.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">🏗️</div>
+      <h3>AI Products</h3>
+      <p>Purpose-built AI tools for builders, teams, and enterprises.</p>
+    </div>
+    <div class="what-card">
+      <div class="what-card-icon">🧭</div>
+      <h3>Strategy</h3>
+      <p>AI roadmap, governance, and change management consulting.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">// services</div>
+      <h2 class="section-title">Built for every<br>kind of operator.</h2>
+    </div>
+    <a href="#contact" class="btn-ghost">All Services →</a>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-num">01 / Individuals & Employees</div>
+      <h3>Personal AI Toolkit</h3>
+      <p>AI agent builder tools, immersive training programs, and project-based learning for individuals ready to level up their capabilities.</p>
+      <div class="service-tags">
+        <span class="tag">AI Builder Tools</span>
+        <span class="tag">Training</span>
+        <span class="tag">Learning</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">02 / Corporates & Businesses</div>
+      <h3>Business AI Stack</h3>
+      <p>AI applications, APIs, LLMs, MCP servers, and database solutions tailored to accelerate business operations at scale.</p>
+      <div class="service-tags">
+        <span class="tag">APIs</span>
+        <span class="tag">LLMs</span>
+        <span class="tag">MCP Servers</span>
+        <span class="tag">Databases</span>
+      </div>
+    </div>
+    <div class="service-card">
+      <div class="service-num">03 / Enterprise & Strategic</div>
+      <h3>Enterprise Transformation</h3>
+      <p>AI consultancy, governance, cost optimization, roadmap consulting, and full-scale AI infrastructure deployment for large organizations.</p>
+      <div class="service-tags">
+        <span class="tag">AI Strategy</span>
+        <span class="tag">Governance</span>
+        <span class="tag">Consultancy</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="products-header">
+    <div class="section-label">// products</div>
+    <h2 class="section-title">Our product suite.</h2>
+  </div>
+
+  <div class="products-list">
+    <div class="product-row">
+      <span class="product-index">01</span>
+      <div class="product-name">AgentSkills</div>
+      <div class="product-desc">Modular AI skill components for building intelligent agent workflows</div>
+      <span class="product-badge badge-live">Live</span>
+    </div>
+    <div class="product-row">
+      <span class="product-index">02</span>
+      <div class="product-name">AgentCrews</div>
+      <div class="product-desc">Multi-agent orchestration platform for collaborative AI teams</div>
+      <span class="product-badge badge-live">Live</span>
+    </div>
+    <div class="product-row">
+      <span class="product-index">03</span>
+      <div class="product-name">AutonomyxGPTs</div>
+      <div class="product-desc">Purpose-built GPT applications for enterprise use cases</div>
+      <span class="product-badge badge-beta">Beta</span>
+    </div>
+    <div class="product-row">
+      <span class="product-index">04</span>
+      <div class="product-name">AutonomyxGems</div>
+      <div class="product-desc">Gemini-powered AI gems for intelligent document and data workflows</div>
+      <span class="product-badge badge-beta">Beta</span>
+    </div>
+    <div class="product-row">
+      <span class="product-index">05</span>
+      <div class="product-name">UnboxdMCP</div>
+      <div class="product-desc">MCP server marketplace for connecting AI agents to real-world tools</div>
+      <span class="product-badge badge-new">New</span>
+    </div>
+    <div class="product-row">
+      <span class="product-index">06</span>
+      <div class="product-name">InfinityLM</div>
+      <div class="product-desc">Custom LLM training and fine-tuning platform for domain-specific AI</div>
+      <span class="product-badge badge-new">New</span>
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section class="tech" id="tech">
+  <div class="tech-header">
+    <div>
+      <div class="section-label">// technology</div>
+      <h2 class="section-title">Powered by the<br>best in AI.</h2>
+    </div>
+  </div>
+
+  <div class="tech-scroll">
+    <span class="tech-pill highlight">Google AI Studio</span>
+    <span class="tech-pill highlight">Claude</span>
+    <span class="tech-pill highlight">ChatGPT</span>
+    <span class="tech-pill">Google Vertex AI</span>
+    <span class="tech-pill">Langflow</span>
+    <span class="tech-pill">LiteLLM</span>
+    <span class="tech-pill">Langfuse</span>
+    <span class="tech-pill">OpenWebUI</span>
+    <span class="tech-pill">Sim.ai</span>
+    <span class="tech-pill highlight">Gemini Models</span>
+    <span class="tech-pill">OpenAI Models</span>
+    <span class="tech-pill">Ollama</span>
+    <span class="tech-pill">Llama</span>
+    <span class="tech-pill">Qwen</span>
+    <span class="tech-pill">DeepSeek</span>
+    <span class="tech-pill">Firecrawl</span>
+    <span class="tech-pill">SerpAPI</span>
+    <span class="tech-pill">Google Cloud API</span>
+    <span class="tech-pill">Slack API</span>
+    <span class="tech-pill">WhatsApp API</span>
+    <span class="tech-pill">Meta Business API</span>
+    <span class="tech-pill">Amazon Seller API</span>
+  </div>
+</section>
+
+<!-- GARTNER CATEGORIES -->
+<section class="gartner">
+  <div class="section-label">// gartner-aligned categories</div>
+  <h2 class="section-title">Enterprise-grade<br>coverage.</h2>
+
+  <div class="gartner-grid">
+    <div class="gartner-cell">
+      <h4>Core AI & Data</h4>
+      <ul>
+        <li>Data Integration Tools</li>
+        <li>AI Application Dev Platforms</li>
+        <li>Generative AI Providers</li>
+        <li>Integration Platform as a Service</li>
+      </ul>
+    </div>
+    <div class="gartner-cell">
+      <h4>AI Agents & Dev</h4>
+      <ul>
+        <li>Agent Dev Platforms (SE)</li>
+        <li>AI Agents for App Developers</li>
+        <li>AI Agent Marketplace for HR</li>
+        <li>AI Agents for Marketing</li>
+      </ul>
+    </div>
+    <div class="gartner-cell">
+      <h4>AI Engineering</h4>
+      <ul>
+        <li>AI Code Assistants</li>
+        <li>AI Code Modernization</li>
+        <li>AI-Augmented Testing</li>
+        <li>AIOps Platforms</li>
+      </ul>
+    </div>
+    <div class="gartner-cell">
+      <h4>Business Automation</h4>
+      <ul>
+        <li>Robotic Process Automation</li>
+        <li>Business Process Automation</li>
+        <li>B2B Marketing Automation</li>
+        <li>RevOps Data Automation</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+  <div class="cta-bg"></div>
+  <div class="section-label">// get started</div>
+  <h2 class="section-title">Ready to go<br>NXXT?</h2>
+  <p>Whether you're an individual, a business, or an enterprise — we have the tools, expertise, and passion to take your AI journey forward.</p>
+  <div class="cta-actions">
+    <a href="https://agnxxt.com" class="btn-primary" target="_blank">Visit agnxxt.com →</a>
+    <a href="#" class="btn-ghost">See Case Studies</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="logo">
+      <div class="logo-dot"></div>
+      Agent<span>NXXT</span>
+    </a>
+    <p>The AI & Automation Lab of OpenAutonomyx (OPC) Private Limited. Building the future of intelligent systems, one agent at a time.</p>
+    <div class="social-links">
+      <a href="#" class="social-link">Li</a>
+      <a href="#" class="social-link">Fb</a>
+      <a href="#" class="social-link">Gh</a>
+      <a href="#" class="social-link">Yt</a>
+    </div>
+  </div>
+
+  <div class="footer-col">
+    <h5>Services</h5>
+    <ul>
+      <li><a href="#">For Individuals</a></li>
+      <li><a href="#">For Corporates</a></li>
+      <li><a href="#">Enterprise Consulting</a></li>
+      <li><a href="#">AI Strategy</a></li>
+      <li><a href="#">AI Governance</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h5>Products</h5>
+    <ul>
+      <li><a href="#">AgentSkills</a></li>
+      <li><a href="#">AgentCrews</a></li>
+      <li><a href="#">AutonomyxGPTs</a></li>
+      <li><a href="#">UnboxdMCP</a></li>
+      <li><a href="#">InfinityLM</a></li>
+    </ul>
+  </div>
+
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="#">Terms of Service</a></li>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Cookie Policy</a></li>
+      <li><a href="#">AI Governance Policy</a></li>
+      <li><a href="#">API Usage Policy</a></li>
+    </ul>
+  </div>
+</footer>
+
+<div class="footer-bottom">
+  <p>© 2026 <span>AgentNXXT</span> · Powered by Autonomyx</p>
+  <p>agnxxt.com · OpenAutonomyx (OPC) Pvt. Ltd.</p>
+</div>
+
+<script>
+  // Cursor glow
+  const glow = document.getElementById('cursorGlow');
+  document.addEventListener('mousemove', e => {
+    glow.style.left = e.clientX + 'px';
+    glow.style.top = e.clientY + 'px';
+  });
+
+  // Intersection Observer for scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(el => {
+      if (el.isIntersecting) {
+        el.target.style.opacity = '1';
+        el.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.service-card, .what-card, .product-row, .gartner-cell').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
