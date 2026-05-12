@@ -1,36 +1,63 @@
 # AGenNext Website
 
-Official Next.js + Tailwind website for the AGenNext ecosystem.
+Official website for the AGenNext ecosystem.
 
-## Local development
+## Overview
 
+This repository contains the public-facing landing page and documentation for:
+
+- Platform
+- Agents
+- Protocols
+- Skills
+- Multimodal AI
+- Enterprise
+- Research
+- Monetization
+
+The site presents AGenNext as a unified, cloud-native, framework-agnostic AI agent operating system.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
+
+## Local Development
+
+Install dependencies:
 ```bash
 npm install
+```
+Run development server:
+```bash
 npm run dev
 ```
 
-## Build
+## Build & Export
 
+Build production app:
 ```bash
 npm run build
-npm run export
 ```
-
-## GitHub Pages Deployment
-
-1. Configure `NEXT_PUBLIC_BASE_PATH` environment variable (optional for Pages):
-
+Export static site for GitHub Pages:
 ```bash
-export NEXT_PUBLIC_BASE_PATH=/website
+NEXT_PUBLIC_BASE_PATH=/website npm run export
+```
+Start local preview:
+```bash
+npx serve out
 ```
 
-2. Push to `main` branch.
-3. GitHub Actions workflow `ci-cd-ghpages.yml` will automatically build and export the site.
-4. Workflow publishes the `out/` folder to the `gh-pages` branch.
-5. Go to **Settings → Pages** and select branch: `gh-pages`, folder: `/ (root)`.
-6. Access your site at:
+## Deployment to GitHub Pages
+
+1. Ensure `next.config.js` sets `output: 'export'` and `basePath: '/website'`.
+2. The workflow `.github/workflows/ci-cd-ghpages.yml` builds and publishes `out/` to `gh-pages` automatically on push.
+3. Go to **Settings → Pages**, select branch `gh-pages` and folder `/ (root)`.
+4. Your site will be live at:
 ```
-https://<username>.github.io/<repository-name>/
+https://<username>.github.io/website/
 ```
 
 ## CI/CD
