@@ -5,19 +5,23 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: '#22d3ee', // cyan accent
-          light: '#38bdf8',
-          dark: '#0ea5e9',
+          DEFAULT: '#1E293B', // dark navy for enterprise background
+          light: '#334155',
+          dark: '#0F172A',
         },
         secondary: {
-          DEFAULT: '#a855f7', // violet accent
-          light: '#c084fc',
-          dark: '#9333ea',
+          DEFAULT: '#9CA3AF', // silver gray for accents and muted text
+          light: '#D1D5DB',
+          dark: '#6B7280',
         },
-        background: '#0f172a', // dark slate
-        surface: '#1e293b', // card/container background
-        text: '#ffffff',
-        muted: '#cbd5e1',
+        accent: {
+          gold: '#D4AF37', // optional highlights
+          teal: '#0D9488',
+        },
+        background: '#F8FAFC', // light background for contrast
+        surface: '#334155', // card/container background
+        text: '#FFFFFF', // main text on dark surfaces
+        muted: '#9CA3AF', // secondary/muted text
       },
     },
   },
