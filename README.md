@@ -51,17 +51,24 @@ npm run dev
 
 ```bash
 npm run build
-npm start
 ```
 
-## GitHub Pages Deployment
+The site is configured for static export through `next.config.mjs`.
 
-```bash
-NEXT_PUBLIC_BASE_PATH=/website npm run export
-npx serve out
-```
+## CI/CD and Deployment
 
-Deployment is automated through `.github/workflows/ci-cd-ghpages.yml`.
+Deployment is configured through GitHub Actions and GitHub Pages.
+
+- Workflow: `.github/workflows/deploy.yml`
+- Static output directory: `out/`
+- Custom domain: `site.agnxxt.com`
+- Live site: https://site.agnxxt.com/
+
+To activate deployment in GitHub:
+
+1. Open **Settings → Pages**.
+2. Under **Build and deployment**, set **Source** to **GitHub Actions**.
+3. Open **Actions** and run the deployment workflow if it does not start automatically.
 
 ## Repository Structure
 
@@ -71,6 +78,7 @@ app/
   layout.tsx
   page.tsx
 public/
+  CNAME
 ```
 
 ## Key Repositories
