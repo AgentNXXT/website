@@ -2,20 +2,36 @@
 
 Official website for the AGenNext ecosystem.
 
-## Overview
+> Build governed AI agent systems for production.
 
-This repository contains the public-facing landing page and documentation for:
+The AGenNext website presents the platform as enterprise-grade infrastructure for building, governing, and operating AI agent systems. The design language is inspired by IBM's enterprise aesthetic: clean typography, structured layouts, and high-contrast messaging.
 
-- Platform
-- Agents
-- Protocols
-- Skills
-- Multimodal AI
-- Enterprise
-- Research
-- Monetization
+## Positioning
 
-The site presents AGenNext as a unified, cloud-native, framework-agnostic AI agent operating system.
+AGenNext is a composable open-source platform for:
+
+- Agent protocols (MCP, A2A, AG-UI)
+- Skill registries and reusable capabilities
+- Workflow orchestration
+- Runtime governance and policy enforcement
+- Identity, authorization, and auditability
+- Enterprise deployment and hardening
+
+## Website Sections
+
+- Hero
+- Why AGenNext
+- Architecture
+- Open-Source Modules
+- Enterprise CTA
+
+## Design System
+
+- IBM Blue (`#0f62fe`)
+- Light neutral backgrounds
+- Large, confident typography
+- Grid-based layouts
+- Minimal motion and high readability
 
 ## Tech Stack
 
@@ -26,50 +42,51 @@ The site presents AGenNext as a unified, cloud-native, framework-agnostic AI age
 
 ## Local Development
 
-Install dependencies:
 ```bash
 npm install
-```
-Run development server:
-```bash
 npm run dev
 ```
 
-## Build & Export
+## Production Build
 
-Build production app:
 ```bash
 npm run build
+npm start
 ```
-Export static site for GitHub Pages:
+
+## GitHub Pages Deployment
+
 ```bash
 NEXT_PUBLIC_BASE_PATH=/website npm run export
-```
-Start local preview:
-```bash
 npx serve out
 ```
 
-## Deployment to GitHub Pages
+Deployment is automated through `.github/workflows/ci-cd-ghpages.yml`.
 
-1. Ensure `next.config.js` sets `output: 'export'` and `basePath: '/website'`.
-2. The workflow `.github/workflows/ci-cd-ghpages.yml` builds and publishes `out/` to `gh-pages` automatically on push.
-3. Go to **Settings → Pages**, select branch `gh-pages` and folder `/ (root)`.
-4. Your site will be live at:
+## Repository Structure
+
+```text
+app/
+  globals.css
+  layout.tsx
+  page.tsx
+public/
 ```
-https://<username>.github.io/website/
-```
 
-## CI/CD
+## Key Repositories
 
-- Workflow runs on push to `main`.
-- Builds Next.js site, exports static HTML, and deploys to GitHub Pages.
+- https://github.com/AGenNext/Platform
+- https://github.com/AGenNext/AGenNext-Protocols
+- https://github.com/AGenNext/AGenNext-SkillRegistry
+- https://github.com/AGenNext/AgentCode
+- https://github.com/AGenNext/CodeAssist
+- https://github.com/AGenNext/AGenNext-CodeReview
+- https://github.com/AGenNext/AGenNext-Enterprise
 
-## Repository Links
+## Repository
 
-- [Platform](https://github.com/AGenNext/Platform)
-- [Protocols](https://github.com/AGenNext/AGenNext-Protocols)
-- [Skill Registry](https://github.com/AGenNext/AGenNext-SkillRegistry)
-- [AgentCode](https://github.com/AGenNext/AgentCode)
-- [CodeAssist](https://github.com/AGenNext/CodeAssist)
-- [CodeReview](https://github.com/AGenNext/AGenNext-CodeReview)
+https://github.com/AGenNext/website
+
+## License
+
+MIT License.
