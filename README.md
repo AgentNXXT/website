@@ -1,6 +1,6 @@
 # AgentNXT Website
 
-A modern marketing website for AgentNXT, built with Next.js and Tailwind CSS.
+A modern marketing website for AgentNXT, built with Next.js, React, TypeScript, and Tailwind CSS.
 
 ## Overview
 
@@ -10,7 +10,10 @@ AgentNXT Website is the frontend codebase for the AgentNXT landing page. It prov
 
 - Next.js
 - React
+- TypeScript
 - Tailwind CSS
+- PostCSS
+- ESLint
 
 ## Getting Started
 
@@ -47,6 +50,15 @@ Then open:
 http://localhost:3000
 ```
 
+## Available Scripts
+
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Start the local development server. |
+| `npm run build` | Create a production build. |
+| `npm run start` | Start the production server. |
+| `npm run lint` | Run Next.js linting. |
+
 ## Build
 
 Create a production build:
@@ -58,7 +70,7 @@ npm run build
 Start the production server:
 
 ```bash
-npm start
+npm run start
 ```
 
 ## Project Structure
