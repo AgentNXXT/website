@@ -5,7 +5,7 @@ const features = [
     title: 'Memory',
     eyebrow: 'Context that compounds',
     description:
-      'Memory helps agents keep track of user preferences, prior decisions, task history, and domain context across sessions.',
+      'Memory helps agents keep track of user preferences, prior decisions, task history, device state, and domain context across sessions.',
     reliability:
       'Reliable agents need continuity. Memory reduces repeated questions, prevents lost context, and lets an agent compare today’s action against what already happened.',
     agents: ['Personal assistants', 'Customer support agents', 'Research agents', 'Healthcare agents'],
@@ -20,6 +20,15 @@ const features = [
     agents: ['Strategy agents', 'Finance agents', 'Sales agents', 'Operations agents'],
   },
   {
+    title: 'Verification',
+    eyebrow: 'Correctness before execution',
+    description:
+      'Verification checks plans, constraints, permissions, expected outputs, and unsafe actions before an agent executes a workflow.',
+    reliability:
+      'Agents become more trustworthy when important actions can be validated against rules, invariants, tests, and human approval paths before they affect real systems.',
+    agents: ['Coding agents', 'Infrastructure agents', 'Robotics agents', 'Enterprise workflow agents'],
+  },
+  {
     title: 'Governance',
     eyebrow: 'Control for production use',
     description:
@@ -32,7 +41,7 @@ const features = [
     title: 'Security',
     eyebrow: 'Protect tools, data, and identity',
     description:
-      'Security protects agent access to credentials, private data, external APIs, tools, repositories, and enterprise systems.',
+      'Security protects agent access to credentials, private data, external APIs, tools, repositories, browsers, devices, and enterprise systems.',
     reliability:
       'A reliable agent must not leak data, overreach permissions, or call tools it should not use. Security creates safe execution boundaries.',
     agents: ['DevOps agents', 'Coding agents', 'Data agents', 'Enterprise agents'],
@@ -45,6 +54,15 @@ const features = [
     reliability:
       'When humans can inspect intent before execution, agents recover faster from ambiguity and teams build trust in automated workflows.',
     agents: ['Executive assistants', 'Support copilots', 'Workflow agents', 'Analyst agents'],
+  },
+  {
+    title: 'Device and Browser Context',
+    eyebrow: 'Agents close to the real world',
+    description:
+      'Device context connects agents to IoT devices, edge hardware, Android apps, browsers, sensors, cameras, gateways, and robotics systems.',
+    reliability:
+      'Agents become more useful when they understand where actions happen, what device state changed, which user session is active, and whether local execution is safer than a cloud round trip.',
+    agents: ['IoT agents', 'Browser agents', 'Android agents', 'Vision agents'],
   },
   {
     title: 'Empathy',
@@ -68,12 +86,18 @@ const agentTypes = [
   'Healthcare agents',
   'Data analysis agents',
   'Executive assistants',
+  'IoT agents',
+  'Edge agents',
+  'Browser agents',
+  'Android agents',
+  'Vision agents',
+  'Robotics agents',
   'Multi-agent teams',
 ]
 
 export const metadata: Metadata = {
   title: 'Features | AGenNext',
-  description: 'Explore AGenNext features for building more reliable AI agents with memory, governance, security, decision intelligence, and human-centered UX.',
+  description: 'Explore AGenNext features for building more reliable AI agents with memory, governance, security, decision intelligence, verification, and device context.',
 }
 
 export default function FeaturesPage() {
@@ -89,7 +113,7 @@ export default function FeaturesPage() {
             Features that make AI agents more reliable.
           </h1>
           <p className="mt-6 max-w-3xl text-xl leading-8 text-zinc-400">
-            AGenNext combines memory, decision intelligence, governance, security, human-centered UX, and empathy so agents can act with more context, control, and trust.
+            AGenNext combines memory, decision intelligence, verification, governance, security, device context, human-centered UX, and empathy so agents can act with more context, control, and trust.
           </p>
         </div>
       </section>
@@ -123,7 +147,7 @@ export default function FeaturesPage() {
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Types of agents</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Different agents need different reliability controls.</h2>
             <p className="mt-5 leading-8 text-zinc-400">
-              AGenNext is designed for many agent categories, from copilots and workflow agents to multi-agent systems that need memory, policy, security, and decision quality.
+              AGenNext is designed for many agent categories, from copilots and workflow agents to device, browser, edge, robotics, and multi-agent systems that need memory, policy, security, verification, and decision quality.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
