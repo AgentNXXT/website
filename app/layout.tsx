@@ -1,20 +1,19 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-const title = 'AGenNext Agent World — Human-Machine Coexistence Platform'
+const title = 'AgentNXT — Human-Machine Coexistence Platform'
 const description =
-  'AGenNext is building Agent World: an open-source platform where humans and machines coexist, share memory, make better decisions, and act together across physical and digital environments.'
+  'AgentNXT is building an open-source platform where humans and machines coexist, share memory, make better decisions, and act together across physical and digital environments.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://site.agnxxt.com'),
   title: {
     default: title,
-    template: '%s | AGenNext Agent World',
+    template: '%s | AgentNXT',
   },
   description,
   keywords: [
-    'Agent World',
-    'AGenNext',
+    'AgentNXT',
     'AI agents',
     'human machine coexistence',
     'agent platform',
@@ -27,9 +26,9 @@ export const metadata: Metadata = {
     'edge AI agents',
     'open source agent platform',
   ],
-  authors: [{ name: 'AGenNext' }],
-  creator: 'AGenNext',
-  publisher: 'AGenNext',
+  authors: [{ name: 'AgentNXT' }],
+  creator: 'AgentNXT',
+  publisher: 'AgentNXT',
   alternates: {
     canonical: '/',
   },
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://site.agnxxt.com',
-    siteName: 'AGenNext Agent World',
+    siteName: 'AgentNXT',
     title,
     description,
   },
