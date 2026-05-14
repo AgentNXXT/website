@@ -11,7 +11,6 @@ AgentNXT Website is the frontend codebase for the AgentNXT landing page. It prov
 - Next.js
 - React
 - Tailwind CSS
-- JavaScript / TypeScript, depending on the project files
 
 ## Getting Started
 
@@ -63,8 +62,6 @@ npm start
 ```
 
 ## Project Structure
-
-Common project folders may include:
 
 ```text
 Agent-Site/
