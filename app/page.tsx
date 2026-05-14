@@ -1,21 +1,21 @@
 const repos = [
   ['Agent Marketplace Catalog', 'Search verified AI agents by DID, publisher, category, capability, and official source repository.', '/catalog'],
-  ['Platform', 'Model-agnostic control plane for Agent World workflows, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
-  ['AGenNext Protocols', 'MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', 'https://github.com/AGenNext/AGenNext-Protocols'],
-  ['Skill Registry', 'Reusable skills packaged as portable building blocks across Agent World runtimes.', 'https://github.com/AGenNext/AGenNext-SkillRegistry'],
+  ['Platform', 'Model-agnostic control plane for AgentNXT workflows, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
+  ['AgentNXT Protocols', 'MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', 'https://github.com/AGenNext/AGenNext-Protocols'],
+  ['Skill Registry', 'Reusable skills packaged as portable building blocks across AgentNXT runtimes.', 'https://github.com/AGenNext/AGenNext-SkillRegistry'],
   ['AgentCode', 'Coding agents powered by OpenHands, LangGraph, and decision intelligence loops.', 'https://github.com/AGenNext/AgentCode'],
   ['Enterprise', 'Governance, deployment hardening, controls, and production adoption patterns.', 'https://github.com/AGenNext/AGenNext-Enterprise'],
 ]
 
 const stats = [
-  ['Agent World', 'Human-machine coexistence'],
+  ['AgentNXT', 'Human-machine coexistence'],
   ['Physical + Digital', 'Shared context layer'],
   ['Open Source', 'Inspectable stack'],
 ]
 
 const features = [
   ['Human-machine coexistence', 'A shared operating layer where humans and machines learn from each other and improve together.'],
-  ['Physical + digital context', 'Connect browsers, devices, sensors, apps, files, tools, and enterprise workflows into one Agent World.'],
+  ['Physical + digital context', 'Connect browsers, devices, sensors, apps, files, tools, and enterprise workflows into one AgentNXT environment.'],
   ['Governed evolution', 'Use memory, verification, policy, observability, and approval paths so collaboration becomes safer over time.'],
 ]
 
@@ -24,12 +24,12 @@ export default function Home() {
     <main className="min-h-screen bg-black text-white">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a href="#top" className="flex items-center gap-3" aria-label="AGenNext home">
-            <span className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white text-sm font-semibold text-black">AG</span>
-            <span className="text-lg font-semibold tracking-tight">AGenNext</span>
+          <a href="#top" className="flex items-center gap-3" aria-label="AgentNXT home">
+            <span className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white text-sm font-semibold text-black">NX</span>
+            <span className="text-lg font-semibold tracking-tight">AgentNXT</span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
-            <a href="/features" className="transition hover:text-white">Agent World</a>
+            <a href="/features" className="transition hover:text-white">AgentNXT</a>
             <a href="/catalog" className="transition hover:text-white">Catalog</a>
             <a href="#platform" className="transition hover:text-white">Platform</a>
             <a href="#modules" className="transition hover:text-white">Modules</a>
@@ -44,17 +44,17 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:py-32">
           <div>
             <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-400">
-              Agent World
+              AgentNXT
             </div>
             <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
               The platform where humans and machines coexist and make each other better.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              AGenNext is building Agent World: a unified physical and digital environment where humans, agents, devices, browsers, tools, memory, and decisions work together.
+              AgentNXT is building a unified physical and digital environment where humans, agents, devices, browsers, tools, memory, and decisions work together.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href="/features" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
-                Explore Agent World
+                Explore AgentNXT
               </a>
               <a href="/catalog" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
                 Browse Agents
@@ -65,7 +65,7 @@ export default function Home() {
           <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 shadow-2xl shadow-white/5 backdrop-blur-xl">
             <div className="rounded-xl border border-white/10 bg-black p-6">
               <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-                <p className="text-sm font-medium text-zinc-300">Agent World layer</p>
+                <p className="text-sm font-medium text-zinc-300">AgentNXT layer</p>
                 <span className="rounded-full border border-white/10 px-2 py-1 text-xs text-zinc-500">Unified</span>
               </div>
               {['Humans teach machines', 'Machines improve human decisions', 'Physical + digital context', 'Governed shared memory'].map((item) => (
@@ -93,7 +93,7 @@ export default function Home() {
       <section id="platform" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Platform</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Agent World is the shared layer for physical and digital collaboration.</h2>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">AgentNXT is the shared layer for physical and digital collaboration.</h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {features.map(([title, description]) => (
