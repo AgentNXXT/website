@@ -1,4 +1,5 @@
 const repos = [
+  ['Agent Marketplace Catalog', 'Search verified AI agents by DID, publisher, category, capability, and official source repository.', '/catalog'],
   ['Platform', 'SDK and model-agnostic control plane for workflow configuration, catalogs, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
   ['AGenNext Protocols', 'Protocol library covering MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', 'https://github.com/AGenNext/AGenNext-Protocols'],
   ['Skill Registry', 'Reusable agent skill catalog for packaging capabilities as portable building blocks across agent runtimes.', 'https://github.com/AGenNext/AGenNext-SkillRegistry'],
@@ -8,23 +9,22 @@ const repos = [
   ['DocOcr', 'Document OCR agent capability for extracting structured knowledge from files and scanned content.', 'https://github.com/AGenNext/AGenNext-DocOcr'],
   ['WebCrawl', 'Web crawling agent capability for collecting, transforming, and grounding external knowledge.', 'https://github.com/AGenNext/AGenNext-WebCrawl'],
   ['Enterprise', 'Enterprise packaging for governance, controls, deployment hardening, and production adoption.', 'https://github.com/AGenNext/AGenNext-Enterprise'],
-  ['Professional', 'Professional templates and workflows for teams building practical agent applications.', 'https://github.com/AGenNext/AGenNext-Professional'],
 ]
 
 const pillars = [
+  ['Verified agent marketplace', 'Discover official-source agents with DID-based canonical identities, publisher metadata, capabilities, and trust signals.'],
   ['Model-agnostic orchestration', 'Connect models, tools, skills, and protocols without locking teams into one runtime or provider.'],
   ['Governed execution', 'Control identity, policies, approvals, observability, usage, and auditability across every agent workflow.'],
-  ['GitOps delivery', 'Ship repeatable agent systems through versioned, reviewable, environment-aware deployment workflows.'],
 ]
 
 const metrics = [
-  ['Any', 'Model'],
-  ['Every', 'Agent workflow'],
+  ['10+', 'Verified agents'],
+  ['DID', 'Canonical identity'],
   ['100%', 'GitOps ready'],
 ]
 
 const architecture = [
-  ['Applications', 'Business workflows, copilots, automations, and developer tools built on governed agent capabilities.'],
+  ['Agent Marketplace', 'Searchable catalog of trusted agents from Docker, Google, LangChain, Microsoft, CrewAI, Agno, DSPy, Dify, Langflow, and LlamaIndex.'],
   ['AgentGraph', 'Composable graph orchestration for routing, planning, tool use, memory, skills, and runtime handoff.'],
   ['Protocols + Skills', 'MCP, A2A, AG-UI, discovery, identity, reusable skills, and enterprise integration points.'],
   ['Governance', 'Policy enforcement, observability, usage controls, approvals, security, and deployment hardening.'],
@@ -40,6 +40,7 @@ export default function Home() {
             <span className="text-lg font-semibold tracking-[-0.02em]">AGenNext</span>
           </a>
           <div className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
+            <a href="/catalog" className="hover:text-[#06B6D4]">Catalog</a>
             <a href="#platform" className="hover:text-[#06B6D4]">Platform</a>
             <a href="#architecture" className="hover:text-[#06B6D4]">AgentGraph</a>
             <a href="#repositories" className="hover:text-[#06B6D4]">Modules</a>
@@ -52,30 +53,30 @@ export default function Home() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(124,58,237,0.25),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.18),transparent_30%)]" />
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:py-32">
           <div className="relative z-10 max-w-4xl">
-            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-[#06B6D4]">AgentGraph Platform</p>
+            <p className="mb-6 text-sm font-semibold uppercase tracking-[0.28em] text-[#06B6D4]">Trusted Agent Marketplace + AgentGraph Platform</p>
             <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
-              Build governed agent systems that run anywhere.
+              Discover, verify, and run governed AI agents.
             </h1>
             <p className="mt-8 max-w-3xl text-xl leading-8 text-slate-300">
-              AGenNext is a model-agnostic AgentGraph platform for composing agents, tools, skills, protocols, and enterprise governance into production-ready workflows.
+              AGenNext combines a DID-first marketplace catalog with a model-agnostic AgentGraph platform for composing agents, tools, skills, protocols, and enterprise governance.
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-400">
-              Deploy through GitOps-controlled workflows across cloud, on-premises, and air-gapped environments.
+              Browse official-source agents from leading ecosystems, then deploy through GitOps-controlled workflows across cloud, on-premises, and air-gapped environments.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#architecture" className="rounded-xl bg-[#7C3AED] px-6 py-4 text-base font-semibold text-white transition hover:opacity-90">
-                Explore AgentGraph
+              <a href="/catalog" className="rounded-xl bg-[#7C3AED] px-6 py-4 text-base font-semibold text-white transition hover:opacity-90">
+                Browse Agent Catalog
               </a>
-              <a href="#repositories" className="rounded-xl border border-white/20 px-6 py-4 text-base font-semibold text-white transition hover:bg-white hover:text-[#0B1020]">
-                View Modules
+              <a href="#architecture" className="rounded-xl border border-white/20 px-6 py-4 text-base font-semibold text-white transition hover:bg-white hover:text-[#0B1020]">
+                Explore AgentGraph
               </a>
             </div>
           </div>
 
           <div className="relative z-10 grid content-end gap-4">
             <div className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur">
-              <p className="text-sm uppercase tracking-[0.22em] text-[#06B6D4]">Enterprise agent control plane</p>
-              <p className="mt-4 text-2xl font-semibold tracking-[-0.03em]">Orchestrate agents, govern execution, and publish reusable capabilities without provider lock-in.</p>
+              <p className="text-sm uppercase tracking-[0.22em] text-[#06B6D4]">Verified agent distribution layer</p>
+              <p className="mt-4 text-2xl font-semibold tracking-[-0.03em]">Search, compare, and trust AI agents using canonical DIDs, official source links, capabilities, and publisher metadata.</p>
             </div>
             <div className="grid grid-cols-3 overflow-hidden rounded-2xl border border-white/10 bg-white/5">
               {metrics.map(([value, label]) => (
@@ -110,8 +111,8 @@ export default function Home() {
       <section id="architecture" className="border-y border-white/10 bg-white/[0.03]">
         <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="mb-10 max-w-3xl">
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">AgentGraph architecture</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] lg:text-5xl">A graph-native foundation for enterprise AI workflows.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Marketplace-aware architecture</p>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] lg:text-5xl">A graph-native foundation for trusted enterprise AI workflows.</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-4">
             {architecture.map(([title, copy], index) => (
@@ -122,6 +123,9 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <a href="/catalog" className="mt-10 inline-flex rounded-xl bg-[#7C3AED] px-6 py-4 font-semibold text-white transition hover:opacity-90">
+            Search verified agents
+          </a>
         </div>
       </section>
 
@@ -129,7 +133,7 @@ export default function Home() {
         <div className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#06B6D4]">Open-source modules</p>
-            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] lg:text-5xl">Composable building blocks for AgentGraph systems.</h2>
+            <h2 className="mt-5 text-4xl font-semibold tracking-[-0.04em] lg:text-5xl">Composable building blocks for marketplace-backed AgentGraph systems.</h2>
           </div>
           <a href="https://github.com/AGenNext" className="text-sm font-semibold text-[#06B6D4] hover:underline">View organization →</a>
         </div>
@@ -150,11 +154,11 @@ export default function Home() {
       <section className="bg-[#7C3AED] text-white">
         <div className="mx-auto flex max-w-7xl flex-col justify-between gap-8 px-6 py-16 lg:flex-row lg:items-center lg:px-8">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Production-ready AgentGraph</p>
-            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em]">Move from fragmented AI experiments to governed agent infrastructure.</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-white/70">Production-ready agent marketplace</p>
+            <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-[-0.04em]">Move from fragmented AI experiments to verified, governed agent infrastructure.</h2>
           </div>
-          <a href="https://github.com/AGenNext/AGenNext-Enterprise" className="rounded-xl bg-white px-6 py-4 font-semibold text-[#7C3AED] transition hover:bg-slate-100">
-            Explore Enterprise
+          <a href="/catalog" className="rounded-xl bg-white px-6 py-4 font-semibold text-[#7C3AED] transition hover:bg-slate-100">
+            Browse Catalog
           </a>
         </div>
       </section>
