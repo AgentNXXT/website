@@ -1,9 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-const title = 'Frontier Autonomous Agent Platform by Autonomyx'
+const title = 'Frontier Autonomous Agent Research Platform'
 const description =
-  'Autonomyx is building a frontier autonomous agent platform for production-grade AI systems.'
+  'Autonomyx is building a frontier research platform for autonomous agents and production-grade AI systems.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://site.agnxxt.com'),
@@ -14,10 +14,11 @@ export const metadata: Metadata = {
   description,
   keywords: [
     'Autonomyx',
-    'frontier autonomous agent platform',
+    'frontier autonomous agent research platform',
+    'autonomous agent research',
     'autonomous agent platform',
     'AI agents',
-    'agent platform',
+    'agent research',
     'agent infrastructure',
     'agent governance',
     'reliable AI',
