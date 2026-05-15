@@ -68,6 +68,13 @@ const offerings = [
   ['Enterprise', 'Multi Team', 'Governance, deployment hardening, controls, and production adoption patterns.', `${siteUrl}/repos/agent-ops/`],
 ]
 
+const trending = [
+  ['Perspective', 'From agent experiments to intelligent enterprise systems', 'How teams can move from isolated prototypes to governed, reusable agent platforms.', '#why-us', 'light'],
+  ['Announcement', 'Offerings catalog for apps, agents, APIs, prompts, and skills', 'Explore platform building blocks across App, Agent, API, SDK, Runtime, CLI, MCP, Prompt, and Skill categories.', '#offerings', 'accent'],
+  ['Research Report', 'Reliable AI for production agent workflows', 'Evaluation, observability, governance, and lifecycle management for dependable autonomous systems.', '#concepts', 'dark'],
+  ['Research Report', 'Human-first autonomous agent systems', 'A practical framing for trust, governance, and human oversight in the Agent World.', '#why-us', 'image'],
+]
+
 const faqs = [
   ['What is Autonomyx?', 'Autonomyx is a frontier autonomous agent research platform focused on concepts, offerings, repositories, and platform capabilities for human-first agent systems.'],
   ['What are the main differentiators?', 'The Why Us differentiators are Cloud Native, Composable, Full Stack, Frontier Research, and Human First.'],
@@ -96,51 +103,45 @@ export default function Home() {
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Explore Offerings</a>
-              <a href="#why-us" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">Why Us</a>
+              <a href="#trending" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">View Trending</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="why-us" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
-        <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
-          <div className="border-t border-white pt-5">
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Why Us</p>
-          </div>
-          <div>
-            <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Five differentiators for the Agent World.</h2>
-            <div className="mt-10 grid border-l border-t border-white/15 md:grid-cols-2 xl:grid-cols-3">
-              {whyUs.map((item, index) => (
-                <a key={item.id} id={item.id} href={item.href} className="group min-h-[260px] border-b border-r border-white/15 p-7 transition hover:bg-white/10">
-                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">{String(index + 1).padStart(2, '0')}</p>
-                  <h3 className="mt-8 text-2xl font-semibold tracking-tight group-hover:underline">{item.label}</h3>
-                  <p className="mt-4 leading-7 text-zinc-400">{item.description}</p>
-                  <p className="mt-8 text-sm text-zinc-500">Read editorial →</p>
-                </a>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="concepts" className="bg-white text-neutral-950">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
-            <div className="border-t border-neutral-950 pt-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Concepts</p>
-            </div>
+      <section id="trending" className="border-b border-white/15 bg-black px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Ideas shaping the Agent World.</h2>
-              <div className="mt-10 grid border-l border-t border-neutral-300 md:grid-cols-2">
-                {concepts.map(([title, description]) => (
-                  <article key={title} className="border-b border-r border-neutral-300 p-7">
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Concept</p>
-                    <h3 className="mt-6 text-2xl font-semibold tracking-tight">{title}</h3>
-                    <p className="mt-4 leading-7 text-neutral-700">{description}</p>
-                  </article>
-                ))}
-              </div>
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Trending</p>
+              <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">What’s trending in the Agent World</h2>
             </div>
+            <a href="#offerings" className="inline-flex items-center gap-3 font-medium text-white">View all work <span className="bg-[#a100ff] px-2 py-1">›</span></a>
+          </div>
+
+          <div className="mt-14 flex gap-8 overflow-x-auto pb-6">
+            {trending.map(([type, title, description, href, variant]) => (
+              <a
+                key={title}
+                href={href}
+                className={`group flex h-[360px] w-[330px] shrink-0 flex-col justify-between p-7 ${
+                  variant === 'light'
+                    ? 'bg-white text-black'
+                    : variant === 'accent'
+                      ? 'bg-[#4b006e] text-white'
+                      : variant === 'image'
+                        ? 'bg-[linear-gradient(135deg,#ffffff_0%,#d7c2ff_40%,#2a0044_100%)] text-black'
+                        : 'border border-white/15 bg-[#050505] text-white'
+                }`}
+              >
+                <div>
+                  <p className={`text-xs font-semibold uppercase tracking-[0.18em] ${variant === 'light' || variant === 'image' ? 'text-neutral-700' : 'text-zinc-300'}`}>{type}</p>
+                  <h3 className="mt-8 text-2xl font-semibold leading-tight tracking-tight">{title}</h3>
+                  <p className={`mt-6 leading-7 ${variant === 'light' || variant === 'image' ? 'text-neutral-700' : 'text-zinc-200'}`}>{description}</p>
+                </div>
+                <p className="text-sm font-semibold group-hover:underline">Expand →</p>
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -164,6 +165,51 @@ export default function Home() {
               ))}
             </div>
             <a href={`${siteUrl}/repos/`} className="mt-10 inline-flex border border-white/20 px-6 py-3 font-medium transition hover:bg-white hover:text-black">Explore all offerings</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" className="bg-white text-neutral-950">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+            <div className="border-t border-neutral-950 pt-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Why Us</p>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Five differentiators for enterprise agent systems.</h2>
+              <div className="mt-10 grid border-l border-t border-neutral-300 md:grid-cols-2 xl:grid-cols-3">
+                {whyUs.map((item, index) => (
+                  <a key={item.id} id={item.id} href={item.href} className="group min-h-[260px] border-b border-r border-neutral-300 p-7 transition hover:bg-neutral-100">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">{String(index + 1).padStart(2, '0')}</p>
+                    <h3 className="mt-8 text-2xl font-semibold tracking-tight group-hover:underline">{item.label}</h3>
+                    <p className="mt-4 leading-7 text-neutral-700">{item.description}</p>
+                    <p className="mt-8 text-sm text-neutral-500">Read editorial →</p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="concepts" className="bg-white text-neutral-950">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+            <div className="border-t border-neutral-950 pt-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Concepts</p>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Ideas shaping the Agent World.</h2>
+              <div className="mt-10 grid border-l border-t border-neutral-300 md:grid-cols-2">
+                {concepts.map(([title, description]) => (
+                  <article key={title} className="border-b border-r border-neutral-300 p-7">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Concept</p>
+                    <h3 className="mt-6 text-2xl font-semibold tracking-tight">{title}</h3>
+                    <p className="mt-4 leading-7 text-neutral-700">{description}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
