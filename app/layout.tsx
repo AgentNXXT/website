@@ -1,18 +1,19 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-const title = 'Frontier Autonomous Agent Research Platform'
+const title = 'AGenNext'
 const description =
-  'Autonomyx is building a frontier research platform for autonomous agents and production-grade AI systems.'
+  'AGenNext is building a frontier research platform for autonomous agents and production-grade AI systems.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://site.agnxxt.com'),
   title: {
     default: title,
-    template: '%s | Autonomyx',
+    template: '%s | AGenNext',
   },
   description,
   keywords: [
+    'AGenNext',
     'Autonomyx',
     'frontier autonomous agent research platform',
     'autonomous agent research',
@@ -25,9 +26,9 @@ export const metadata: Metadata = {
     'contextual AI',
     'open source AI',
   ],
-  authors: [{ name: 'Autonomyx' }],
-  creator: 'Autonomyx',
-  publisher: 'Autonomyx',
+  authors: [{ name: 'AGenNext' }],
+  creator: 'AGenNext',
+  publisher: 'AGenNext',
   alternates: {
     canonical: '/',
   },
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://site.agnxxt.com',
-    siteName: 'Autonomyx',
+    siteName: 'AGenNext',
     title,
     description,
   },
