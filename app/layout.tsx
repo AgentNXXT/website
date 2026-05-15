@@ -1,9 +1,9 @@
 import './globals.css'
 import type { Metadata } from 'next'
 
-const title = 'AGenNext — Frontier Agent Platform For Human First World'
+const title = 'AGenNext — Cloud Native Composable Full Stack Frontier Agent Platform'
 const description =
-  'AGenNext is a frontier agent platform for a human-first world.'
+  'AGenNext is a cloud native, composable, full stack frontier agent platform for a human-first world.'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://site.agnxxt.com'),
@@ -14,14 +14,15 @@ export const metadata: Metadata = {
   description,
   keywords: [
     'AGenNext',
+    'cloud native agent platform',
+    'composable agent platform',
+    'full stack agent platform',
     'frontier agent platform',
     'agent platform',
     'human first world',
     'human-first AI',
     'AI agents',
-    'agent research',
     'agent infrastructure',
-    'responsible AI',
     'open source AI',
   ],
   authors: [{ name: 'AGenNext' }],
