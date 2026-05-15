@@ -18,21 +18,44 @@ const pillars = [
     label: 'Full Stack',
     title: 'Full Stack Agent Infrastructure',
     description:
-      'Support the full agent lifecycle from discovery and orchestration to intelligence, governance, deployment, monitoring, and production readiness.',
+      'Support the full agent lifecycle from discovery and orchestration to governance, deployment, monitoring, and production readiness.',
   },
   {
     id: 'frontier-agent-platform',
     label: 'Frontier Agent Platform',
-    title: 'Pioneering Intelligence & Governance In The Agent World',
+    title: 'Frontier Agent Platform',
     description:
-      'Create advanced agent systems for real-world workflows with intelligence, governance, trust, and human-centered control built into the Agent World.',
+      'Create advanced agent systems for real-world workflows, enterprise use cases, and production-grade agent operations.',
   },
   {
     id: 'human-first-world',
     label: 'Human First World',
     title: 'Built For A Human First World',
     description:
-      'Design AI systems that keep people, teams, trust, governance, and practical outcomes at the center of every agent workflow.',
+      'Design agent systems that keep people, teams, trust, governance, and practical outcomes at the center of every workflow.',
+  },
+]
+
+const blogTopics = [
+  {
+    id: 'frontier-ai-human-first',
+    title: 'Frontier AI Which Puts Humans First',
+    description: 'Research notes on designing frontier AI systems around human needs, trust, and outcomes.',
+  },
+  {
+    id: 'reliable-ai',
+    title: 'Reliable AI',
+    description: 'Ideas on dependable AI systems, production quality, evaluation, monitoring, and failure handling.',
+  },
+  {
+    id: 'contextual-ai',
+    title: 'Contextual AI',
+    description: 'Perspectives on AI systems that understand context, memory, workflow state, and user intent.',
+  },
+  {
+    id: 'construction-ai',
+    title: 'Construction AI',
+    description: 'How agentic AI can support construction planning, site intelligence, documentation, safety, and delivery workflows.',
   },
 ]
 
@@ -60,6 +83,7 @@ export default function Home() {
                 {pillar.label}
               </a>
             ))}
+            <a href="#blog" className="transition hover:text-white">Blog</a>
             <a href="#modules" className="transition hover:text-white">Modules</a>
             <a href="https://github.com/AGenNext" className="rounded-lg border border-white/10 px-4 py-2 text-white transition hover:bg-white hover:text-black">GitHub</a>
           </nav>
@@ -75,17 +99,17 @@ export default function Home() {
               Cloud Native · Composable · Full Stack
             </div>
             <h1 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-              Pioneering Intelligence & Governance In The Agent World.
+              Frontier Agent Platform For Human First World.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems with intelligence and governance at the core.
+              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href="#cloud-native" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
                 Explore Platform
               </a>
-              <a href="#modules" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
-                View Modules
+              <a href="#blog" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
+                Read Topics
               </a>
             </div>
           </div>
@@ -114,6 +138,22 @@ export default function Home() {
           </div>
         </section>
       ))}
+
+      <section id="blog" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
+        <div className="mb-10 max-w-3xl">
+          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Blog Topics</p>
+          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Ideas shaping the Agent World</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {blogTopics.map((topic) => (
+            <article key={topic.id} id={topic.id} className="scroll-mt-24 rounded-2xl border border-white/10 bg-white/[0.03] p-7">
+              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-zinc-500">Blog Topic</p>
+              <h3 className="text-2xl font-semibold tracking-tight">{topic.title}</h3>
+              <p className="mt-4 leading-7 text-zinc-400">{topic.description}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
       <section id="modules" className="mx-auto max-w-7xl scroll-mt-24 px-6 pb-24 pt-12 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
