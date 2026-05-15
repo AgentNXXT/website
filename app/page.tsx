@@ -18,21 +18,21 @@ const pillars = [
     label: 'Full Stack',
     title: 'Full Stack Agent Infrastructure',
     description:
-      'Support the full agent lifecycle from discovery and orchestration to governance, deployment, monitoring, and production readiness.',
+      'Support the full agent lifecycle from discovery and orchestration to intelligence, governance, deployment, monitoring, and production readiness.',
   },
   {
     id: 'frontier-agent-platform',
     label: 'Frontier Agent Platform',
-    title: 'Frontier Agent Platform',
+    title: 'Pioneering Intelligence & Governance In The Agent World',
     description:
-      'Create advanced agent systems for real-world workflows, enterprise use cases, and human-centered AI applications.',
+      'Create advanced agent systems for real-world workflows with intelligence, governance, trust, and human-centered control built into the Agent World.',
   },
   {
     id: 'human-first-world',
     label: 'Human First World',
     title: 'Built For A Human First World',
     description:
-      'Design AI systems that keep people, teams, trust, and practical outcomes at the center of every agent workflow.',
+      'Design AI systems that keep people, teams, trust, governance, and practical outcomes at the center of every agent workflow.',
   },
 ]
 
@@ -75,10 +75,10 @@ export default function Home() {
               Cloud Native · Composable · Full Stack
             </div>
             <h1 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-              Frontier Agent Platform For Human First World.
+              Pioneering Intelligence & Governance In The Agent World.
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems.
+              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems with intelligence and governance at the core.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
               <a href="#cloud-native" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
