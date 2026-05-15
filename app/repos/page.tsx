@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import RepoSearch from './RepoSearch'
 import { repoPages } from './data'
+
+const siteUrl = 'https://site.agnxxt.com'
 
 export const metadata: Metadata = {
   title: 'Repositories | Autonomyx',
@@ -8,50 +11,35 @@ export const metadata: Metadata = {
 
 export default function ReposPage() {
   return (
-    <main className="min-h-screen bg-white text-neutral-950">
-      <header className="border-b border-neutral-200">
+    <main className="min-h-screen bg-black text-white">
+      <header className="border-b border-white/15 bg-black">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
-          <a href="/" className="text-lg font-semibold tracking-tight">Autonomyx</a>
-          <nav className="flex items-center gap-6 text-sm text-neutral-600">
-            <a href="/" className="hover:text-neutral-950">Home</a>
-            <a href="/catalog" className="hover:text-neutral-950">Catalog</a>
-            <a href="https://github.com/AGenNext" className="hover:text-neutral-950">GitHub</a>
+          <a href={`${siteUrl}/`} className="text-base font-semibold uppercase tracking-[0.18em] text-white">Autonomyx</a>
+          <nav className="flex items-center gap-8 text-sm text-zinc-300">
+            <a href={`${siteUrl}/`} className="hover:text-white">Home</a>
+            <a href={`${siteUrl}/catalog/`} className="hover:text-white">Catalog</a>
+            <a href="https://github.com/AGenNext" className="hover:text-white">GitHub</a>
           </nav>
         </div>
       </header>
 
-      <section className="border-b border-neutral-200">
-        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">Repository landing pages</p>
-          <h1 className="mt-6 max-w-5xl text-5xl font-semibold tracking-[-0.04em] md:text-7xl">
-            Building blocks for the Frontier Autonomous Agent Research Platform.
-          </h1>
-          <p className="mt-6 max-w-3xl text-xl leading-8 text-neutral-600">
-            Explore the AGenNext repositories organized by user benefit, platform capabilities, use cases, and getting-started paths.
-          </p>
+      <section className="border-b border-white/15 bg-black">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-20 lg:grid-cols-[280px_1fr] lg:px-8">
+          <div className="border-t border-white pt-5">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Repository Index</p>
+          </div>
+          <div>
+            <h1 className="max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+              Building blocks for the Frontier Autonomous Agent Research Platform.
+            </h1>
+            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
+              Full-text search across repository landing pages, benefits, use cases, platform capabilities, and getting-started paths.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
-        <div className="grid border-t border-neutral-200 md:grid-cols-2 lg:grid-cols-3">
-          {repoPages.map((repo) => (
-            <a
-              key={repo.slug}
-              href={`/repos/${repo.slug}`}
-              className="group border-b border-neutral-200 px-0 py-8 transition hover:bg-neutral-50 md:border-r md:px-6"
-            >
-              <div className="flex items-center justify-between gap-4">
-                <p className="text-sm uppercase tracking-[0.18em] text-neutral-500">{repo.repo}</p>
-                {repo.isPrivate ? (
-                  <span className="border border-neutral-300 px-2 py-1 text-xs text-neutral-600">Private</span>
-                ) : null}
-              </div>
-              <h2 className="mt-5 text-2xl font-semibold tracking-tight group-hover:underline">{repo.name}</h2>
-              <p className="mt-4 leading-7 text-neutral-600">{repo.centralBenefit}</p>
-            </a>
-          ))}
-        </div>
-      </section>
+      <RepoSearch repos={repoPages} />
     </main>
   )
 }
