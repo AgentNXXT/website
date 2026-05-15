@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   color-scheme: dark;
@@ -33,16 +31,16 @@ a {
   color: #000;
 }
 
-@layer utilities {
-  .border-grid {
-    @apply border border-white/10;
-  }
+@utility border-grid {
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
 
-  .surface {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10;
-  }
+@utility surface {
+  background: rgb(255 255 255 / 0.03);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
 
-  .text-muted {
-    @apply text-zinc-400;
-  }
+@utility text-muted {
+  color: rgb(161 161 170 / 1);
 }

@@ -11,7 +11,7 @@ export default function QASummary() {
           <li>Check the enterprise classy theme is consistent (dark navy background, silver/gray accents, gold/teal highlights, surface cards, white text).</li>
           <li>Verify security headers: CSP, X-Frame-Options, HSTS.</li>
           <li>Ensure no console logs or development-only scripts remain.</li>
-          <li>Validate the site is accessible at `https://<username>.github.io/website/` and all internal links work.</li>
+          <li>Validate the site is accessible at `https://&lt;username&gt;.github.io/website/` and all internal links work.</li>
           <li>Check all GitHub repository links for accuracy.</li>
           <li>Perform visual QA for responsiveness and enterprise aesthetic.</li>
         </ul>
