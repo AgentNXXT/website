@@ -1,183 +1,191 @@
-const pillars = [
+import type { Metadata } from 'next'
+import SiteHeader from './components/SiteHeader'
+
+export const metadata: Metadata = {
+  title: 'Frontier Autonomous Agent Research Platform | Autonomyx',
+  description:
+    'Autonomyx is a frontier autonomous agent research platform with concepts, offerings, repositories, and platform capabilities for building human-first agent systems.',
+}
+
+const siteUrl = 'https://site.agnxxt.com'
+
+const whyUs = [
   {
     id: 'cloud-native',
     label: 'Cloud Native',
-    title: 'Cloud Native Agent Platform',
+    title: 'Cloud native foundations for production agent systems',
     description:
-      'Build and deploy agent systems with infrastructure patterns designed for modern cloud environments, automation, observability, and scalable operations.',
+      'Deploy, observe, govern, and operate agent systems with infrastructure patterns designed for scale, reliability, and control.',
+    href: `${siteUrl}/cloud-native/`,
   },
   {
     id: 'composable',
     label: 'Composable',
-    title: 'Composable Agent Architecture',
+    title: 'Composable building blocks for the Agent World',
     description:
-      'Connect agents, tools, models, memory, protocols, and workflows as modular building blocks that can evolve independently.',
+      'Connect agents, tools, models, memory, protocols, prompts, and skills as reusable modules that can evolve independently.',
+    href: `${siteUrl}/composable/`,
   },
   {
     id: 'full-stack',
     label: 'Full Stack',
-    title: 'Full Stack Agent Infrastructure',
+    title: 'Full stack infrastructure from research to operations',
     description:
-      'Support the full agent lifecycle from discovery and orchestration to governance, deployment, monitoring, and production readiness.',
+      'Support the agent lifecycle across discovery, orchestration, evaluation, governance, deployment, monitoring, and user experience.',
+    href: `${siteUrl}/full-stack/`,
   },
   {
-    id: 'frontier-agent-platform',
-    label: 'Frontier Agent Platform',
-    title: 'Frontier Agent Platform',
+    id: 'frontier-research',
+    label: 'Frontier Research',
+    title: 'Frontier research grounded in real workflows',
     description:
-      'Create advanced agent systems for real-world workflows, enterprise use cases, and production-grade agent operations.',
+      'Translate research in autonomy, context, reliability, governance, and trust into practical platform capabilities.',
+    href: `${siteUrl}/frontier-research/`,
   },
   {
-    id: 'human-first-world',
-    label: 'Human First World',
-    title: 'Built For A Human First World',
+    id: 'human-first',
+    label: 'Human First',
+    title: 'Human-first autonomy for accountable systems',
     description:
-      'Design agent systems that keep people, teams, trust, governance, and practical outcomes at the center of every workflow.',
+      'Keep people, teams, trust, governance, and practical outcomes at the center of every agent workflow.',
+    href: `${siteUrl}/human-first/`,
   },
 ]
 
-const blogTopics = [
-  {
-    id: 'frontier-ai-human-first',
-    title: 'Frontier AI Which Puts Humans First',
-    description: 'Research notes on designing frontier AI systems around human needs, trust, and outcomes.',
-  },
-  {
-    id: 'reliable-ai',
-    title: 'Reliable AI',
-    description: 'Ideas on dependable AI systems, production quality, evaluation, monitoring, and failure handling.',
-  },
-  {
-    id: 'contextual-ai',
-    title: 'Contextual AI',
-    description: 'Perspectives on AI systems that understand context, memory, workflow state, and user intent.',
-  },
-  {
-    id: 'construction-ai',
-    title: 'Construction AI',
-    description: 'How agentic AI can support construction planning, site intelligence, documentation, safety, and delivery workflows.',
-  },
+const concepts = [
+  ['Frontier AI Which Puts Humans First', 'Research notes on designing frontier AI systems around human needs, trust, and outcomes.'],
+  ['Reliable AI', 'Ideas on dependable AI systems, production quality, evaluation, monitoring, and failure handling.'],
+  ['Contextual AI', 'Perspectives on AI systems that understand context, memory, workflow state, and user intent.'],
+  ['Construction AI', 'How agentic AI can support construction planning, site intelligence, documentation, safety, and delivery workflows.'],
 ]
 
-const modules = [
-  ['Agent Marketplace Catalog', 'Search verified AI agents by DID, publisher, category, capability, and official source repository.', '/catalog'],
-  ['Platform', 'Control plane for orchestration, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
-  ['AGenNext Protocols', 'MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', 'https://github.com/AGenNext/AGenNext-Protocols'],
-  ['Skill Registry', 'Reusable skills packaged as portable building blocks across agent runtimes.', 'https://github.com/AGenNext/AGenNext-SkillRegistry'],
-  ['AgentCode', 'Coding agents powered by OpenHands, LangGraph, and decision intelligence loops.', 'https://github.com/AGenNext/AgentCode'],
-  ['Enterprise', 'Governance, deployment hardening, controls, and production adoption patterns.', 'https://github.com/AGenNext/AGenNext-Enterprise'],
+const offerings = [
+  ['Agent Marketplace Catalog', 'App', 'Search verified AI agents by DID, publisher, category, capability, and official source repository.', `${siteUrl}/catalog/`],
+  ['Platform', 'Runtime', 'Control plane for orchestration, authentication, policies, traces, usage, and runner handoff.', `${siteUrl}/repos/`],
+  ['AGenNext Protocols', 'Protocol Specific Agent', 'MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', `${siteUrl}/repos/agent-protocols/`],
+  ['Skill Registry', 'Skill', 'Reusable skills packaged as portable building blocks across agent runtimes.', `${siteUrl}/repos/agent-skills/`],
+  ['AgentCode', 'Agent', 'Coding agents powered by OpenHands, LangGraph, and decision intelligence loops.', `${siteUrl}/repos/agent-builder/`],
+  ['Enterprise', 'Multi Team', 'Governance, deployment hardening, controls, and production adoption patterns.', `${siteUrl}/repos/agent-ops/`],
+]
+
+const faqs = [
+  ['What is Autonomyx?', 'Autonomyx is a frontier autonomous agent research platform focused on concepts, offerings, repositories, and platform capabilities for human-first agent systems.'],
+  ['What are the main differentiators?', 'The Why Us differentiators are Cloud Native, Composable, Full Stack, Frontier Research, and Human First.'],
+  ['What are offerings?', 'Offerings are catalog items such as apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and task or industry-specific agents.'],
+  ['Is the platform open source?', 'Many AGenNext repositories are public and open source. Some repositories remain private where public details should stay high-level.'],
+  ['How do I get started?', 'Start with the Offerings catalog or repository pages, then follow the GitHub README links for implementation details.'],
 ]
 
 export default function Home() {
   return (
     <main className="min-h-screen bg-black text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <a href="#top" className="flex items-center gap-3" aria-label="AGenNext home">
-            <span className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white text-sm font-semibold text-black">AG</span>
-            <span className="text-lg font-semibold tracking-tight">AGenNext</span>
-          </a>
-          <nav className="hidden items-center gap-5 text-sm text-zinc-400 lg:flex">
-            {pillars.map((pillar) => (
-              <a key={pillar.id} href={`#${pillar.id}`} className="transition hover:text-white">
-                {pillar.label}
-              </a>
-            ))}
-            <a href="#blog" className="transition hover:text-white">Blog</a>
-            <a href="#modules" className="transition hover:text-white">Modules</a>
-            <a href="https://github.com/AGenNext" className="rounded-lg border border-white/10 px-4 py-2 text-white transition hover:bg-white hover:text-black">GitHub</a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
-      <section id="top" className="relative overflow-hidden border-b border-white/10">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
-        <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-white/10 to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
-          <div className="max-w-5xl">
-            <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-400">
-              Cloud Native · Composable · Full Stack
-            </div>
-            <h1 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-              Frontier Agent Platform For Human First World.
+      <section id="top" className="border-b border-white/15 bg-black">
+        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[280px_1fr] lg:px-8 lg:py-32">
+          <div className="border-t border-white pt-5">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Autonomyx</p>
+          </div>
+          <div>
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Frontier Autonomous Agent Research Platform</p>
+            <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
+              Building blocks for human-first autonomous agent systems.
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
-              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems.
+            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
+              Explore concepts, offerings, repositories, and research-led platform capabilities for building agents that are composable, governable, reliable, and practical.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="#cloud-native" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
-                Explore Platform
-              </a>
-              <a href="#blog" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
-                Read Topics
-              </a>
+              <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Explore Offerings</a>
+              <a href="#why-us" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">Why Us</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-4 px-6 py-12 md:grid-cols-5 lg:px-8">
-        {pillars.map((pillar) => (
-          <a key={pillar.id} href={`#${pillar.id}`} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]">
-            <div className="text-lg font-semibold tracking-tight">{pillar.label}</div>
-            <div className="mt-2 text-sm text-zinc-400">#{pillar.id}</div>
-          </a>
-        ))}
-      </section>
-
-      {pillars.map((pillar, index) => (
-        <section key={pillar.id} id={pillar.id} className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
-          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <div>
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">{String(index + 1).padStart(2, '0')} · {pillar.label}</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">{pillar.title}</h2>
-            </div>
-            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
-              <p className="text-lg leading-8 text-zinc-300">{pillar.description}</p>
-            </div>
+      <section id="why-us" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+          <div className="border-t border-white pt-5">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Why Us</p>
           </div>
-        </section>
-      ))}
-
-      <section id="blog" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Blog Topics</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Ideas shaping the Agent World</h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-          {blogTopics.map((topic) => (
-            <article key={topic.id} id={topic.id} className="scroll-mt-24 rounded-2xl border border-white/10 bg-white/[0.03] p-7">
-              <p className="mb-4 text-xs uppercase tracking-[0.2em] text-zinc-500">Blog Topic</p>
-              <h3 className="text-2xl font-semibold tracking-tight">{topic.title}</h3>
-              <p className="mt-4 leading-7 text-zinc-400">{topic.description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="modules" className="mx-auto max-w-7xl scroll-mt-24 px-6 pb-24 pt-12 lg:px-8">
-        <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Open source</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Core Modules</h2>
+            <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Five differentiators for the Agent World.</h2>
+            <div className="mt-10 grid border-l border-t border-white/15 md:grid-cols-2 xl:grid-cols-3">
+              {whyUs.map((item, index) => (
+                <a key={item.id} id={item.id} href={item.href} className="group min-h-[260px] border-b border-r border-white/15 p-7 transition hover:bg-white/10">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">{String(index + 1).padStart(2, '0')}</p>
+                  <h3 className="mt-8 text-2xl font-semibold tracking-tight group-hover:underline">{item.label}</h3>
+                  <p className="mt-4 leading-7 text-zinc-400">{item.description}</p>
+                  <p className="mt-8 text-sm text-zinc-500">Read editorial →</p>
+                </a>
+              ))}
+            </div>
           </div>
-          <a href="https://github.com/AGenNext" className="text-sm font-medium text-zinc-400 transition hover:text-white">View organization →</a>
         </div>
+      </section>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {modules.map(([title, description, href]) => (
-            <a
-              key={title}
-              href={href}
-              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-7 transition hover:-translate-y-1 hover:bg-white/[0.06]"
-            >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-                <span className="text-zinc-600 transition group-hover:translate-x-1 group-hover:text-white">→</span>
+      <section id="concepts" className="bg-white text-neutral-950">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+            <div className="border-t border-neutral-950 pt-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">Concepts</p>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Ideas shaping the Agent World.</h2>
+              <div className="mt-10 grid border-l border-t border-neutral-300 md:grid-cols-2">
+                {concepts.map(([title, description]) => (
+                  <article key={title} className="border-b border-r border-neutral-300 p-7">
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-neutral-500">Concept</p>
+                    <h3 className="mt-6 text-2xl font-semibold tracking-tight">{title}</h3>
+                    <p className="mt-4 leading-7 text-neutral-700">{description}</p>
+                  </article>
+                ))}
               </div>
-              <p className="mt-4 leading-7 text-zinc-400">{description}</p>
-            </a>
-          ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="offerings" className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+          <div className="border-t border-white pt-5">
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Offerings</p>
+          </div>
+          <div>
+            <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Searchable building blocks for agent systems.</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">Offerings include apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and role, task, industry, or protocol-specific agents.</p>
+            <div className="mt-10 grid border-l border-t border-white/15 md:grid-cols-2 xl:grid-cols-3">
+              {offerings.map(([title, type, description, href]) => (
+                <a key={title} href={href} className="group min-h-[280px] border-b border-r border-white/15 p-7 transition hover:bg-white/10">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-zinc-500">{type}</p>
+                  <h3 className="mt-8 text-2xl font-semibold tracking-tight group-hover:underline">{title}</h3>
+                  <p className="mt-4 leading-7 text-zinc-400">{description}</p>
+                  <p className="mt-8 text-sm text-zinc-500">View offering →</p>
+                </a>
+              ))}
+            </div>
+            <a href={`${siteUrl}/repos/`} className="mt-10 inline-flex border border-white/20 px-6 py-3 font-medium transition hover:bg-white hover:text-black">Explore all offerings</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-white text-neutral-950">
+        <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[280px_1fr]">
+            <div className="border-t border-neutral-950 pt-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-neutral-500">FAQ</p>
+            </div>
+            <div>
+              <h2 className="max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Questions before you explore.</h2>
+              <div className="mt-10 border-t border-neutral-300">
+                {faqs.map(([question, answer]) => (
+                  <details key={question} className="group border-b border-neutral-300 py-6">
+                    <summary className="cursor-pointer list-none text-xl font-semibold tracking-tight">{question}</summary>
+                    <p className="mt-4 max-w-3xl leading-7 text-neutral-700">{answer}</p>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
