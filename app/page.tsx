@@ -1,22 +1,48 @@
-const repos = [
+const pillars = [
+  {
+    id: 'cloud-native',
+    label: 'Cloud Native',
+    title: 'Cloud Native Agent Platform',
+    description:
+      'Build and deploy agent systems with infrastructure patterns designed for modern cloud environments, automation, observability, and scalable operations.',
+  },
+  {
+    id: 'composable',
+    label: 'Composable',
+    title: 'Composable Agent Architecture',
+    description:
+      'Connect agents, tools, models, memory, protocols, and workflows as modular building blocks that can evolve independently.',
+  },
+  {
+    id: 'full-stack',
+    label: 'Full Stack',
+    title: 'Full Stack Agent Infrastructure',
+    description:
+      'Support the full agent lifecycle from discovery and orchestration to governance, deployment, monitoring, and production readiness.',
+  },
+  {
+    id: 'frontier-agent-platform',
+    label: 'Frontier Agent Platform',
+    title: 'Frontier Agent Platform',
+    description:
+      'Create advanced agent systems for real-world workflows, enterprise use cases, and human-centered AI applications.',
+  },
+  {
+    id: 'human-first-world',
+    label: 'Human First World',
+    title: 'Built For A Human First World',
+    description:
+      'Design AI systems that keep people, teams, trust, and practical outcomes at the center of every agent workflow.',
+  },
+]
+
+const modules = [
   ['Agent Marketplace Catalog', 'Search verified AI agents by DID, publisher, category, capability, and official source repository.', '/catalog'],
-  ['Platform', 'Model-agnostic control plane for orchestration, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
+  ['Platform', 'Control plane for orchestration, auth, policies, traces, usage, and runner handoff.', 'https://github.com/AGenNext/Platform'],
   ['AGenNext Protocols', 'MCP, A2A, AG-UI, commerce, payments, authorization, identity, decentralized identity, and discovery.', 'https://github.com/AGenNext/AGenNext-Protocols'],
   ['Skill Registry', 'Reusable skills packaged as portable building blocks across agent runtimes.', 'https://github.com/AGenNext/AGenNext-SkillRegistry'],
   ['AgentCode', 'Coding agents powered by OpenHands, LangGraph, and decision intelligence loops.', 'https://github.com/AGenNext/AgentCode'],
   ['Enterprise', 'Governance, deployment hardening, controls, and production adoption patterns.', 'https://github.com/AGenNext/AGenNext-Enterprise'],
-]
-
-const stats = [
-  ['10+', 'Verified agents'],
-  ['DID', 'Canonical identity'],
-  ['GitOps', 'Deployment ready'],
-]
-
-const features = [
-  ['Verified discovery', 'Browse official-source agents with canonical identifiers, publisher metadata, categories, and capabilities.'],
-  ['Runtime flexibility', 'Compose models, skills, tools, and protocols without locking teams into a single SDK or provider.'],
-  ['Governed execution', 'Bring policy, observability, usage, approvals, and enterprise controls into every agent workflow.'],
 ]
 
 export default function Home() {
@@ -28,9 +54,12 @@ export default function Home() {
             <span className="grid h-8 w-8 place-items-center rounded-md border border-white/15 bg-white text-sm font-semibold text-black">AG</span>
             <span className="text-lg font-semibold tracking-tight">AGenNext</span>
           </a>
-          <nav className="hidden items-center gap-7 text-sm text-zinc-400 md:flex">
-            <a href="/catalog" className="transition hover:text-white">Catalog</a>
-            <a href="#platform" className="transition hover:text-white">Platform</a>
+          <nav className="hidden items-center gap-5 text-sm text-zinc-400 lg:flex">
+            {pillars.map((pillar) => (
+              <a key={pillar.id} href={`#${pillar.id}`} className="transition hover:text-white">
+                {pillar.label}
+              </a>
+            ))}
             <a href="#modules" className="transition hover:text-white">Modules</a>
             <a href="https://github.com/AGenNext" className="rounded-lg border border-white/10 px-4 py-2 text-white transition hover:bg-white hover:text-black">GitHub</a>
           </nav>
@@ -40,72 +69,53 @@ export default function Home() {
       <section id="top" className="relative overflow-hidden border-b border-white/10">
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,.06)_1px,transparent_1px)] bg-[size:48px_48px] opacity-30" />
         <div className="absolute inset-x-0 top-0 h-80 bg-gradient-to-b from-white/10 to-transparent" />
-        <div className="relative mx-auto grid max-w-7xl gap-12 px-6 py-24 lg:grid-cols-[1.1fr_.9fr] lg:px-8 lg:py-32">
-          <div>
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-8 lg:py-32">
+          <div className="max-w-5xl">
             <div className="mb-6 inline-flex rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs uppercase tracking-[0.2em] text-zinc-400">
-              Trusted Agent Marketplace
+              Cloud Native · Composable · Full Stack
             </div>
-            <h1 className="max-w-5xl text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
-              Discover, verify, and run governed AI agents.
+            <h1 className="text-5xl font-semibold tracking-[-0.05em] md:text-7xl">
+              Frontier Agent Platform For Human First World.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-400">
-              A clean black-and-white Next.js experience for trusted agent discovery, orchestration, and enterprise governance.
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-zinc-400">
+              AGenNext is a cloud native, composable, full stack frontier agent platform for building human-first AI systems.
             </p>
             <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="/catalog" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
-                Browse Catalog
-              </a>
-              <a href="#platform" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
+              <a href="#cloud-native" className="rounded-lg bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
                 Explore Platform
               </a>
-            </div>
-          </div>
-
-          <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-3 shadow-2xl shadow-white/5 backdrop-blur-xl">
-            <div className="rounded-xl border border-white/10 bg-black p-6">
-              <div className="mb-6 flex items-center justify-between border-b border-white/10 pb-4">
-                <p className="text-sm font-medium text-zinc-300">Agent verification</p>
-                <span className="rounded-full border border-white/10 px-2 py-1 text-xs text-zinc-500">Live</span>
-              </div>
-              {['Canonical DID identity', 'Official source repository', 'Publisher and capability metadata', 'Policy-ready deployment path'].map((item) => (
-                <div key={item} className="mb-3 flex items-center justify-between rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 last:mb-0">
-                  <span className="text-sm text-zinc-300">{item}</span>
-                  <span className="text-xs text-zinc-500">✓</span>
-                </div>
-              ))}
+              <a href="#modules" className="rounded-lg border border-white/10 bg-white/[0.03] px-6 py-3 text-center font-medium transition hover:bg-white/10">
+                View Modules
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-12 lg:px-8">
-        <div className="grid gap-4 md:grid-cols-3">
-          {stats.map(([value, label]) => (
-            <div key={label} className="rounded-2xl border border-white/10 bg-white/[0.03] p-6">
-              <div className="text-3xl font-semibold tracking-tight">{value}</div>
-              <div className="mt-2 text-sm text-zinc-400">{label}</div>
+      <section className="mx-auto grid max-w-7xl gap-4 px-6 py-12 md:grid-cols-5 lg:px-8">
+        {pillars.map((pillar) => (
+          <a key={pillar.id} href={`#${pillar.id}`} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5 transition hover:bg-white/[0.06]">
+            <div className="text-lg font-semibold tracking-tight">{pillar.label}</div>
+            <div className="mt-2 text-sm text-zinc-400">#{pillar.id}</div>
+          </a>
+        ))}
+      </section>
+
+      {pillars.map((pillar, index) => (
+        <section key={pillar.id} id={pillar.id} className="mx-auto max-w-7xl scroll-mt-24 px-6 py-20 lg:px-8">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">{String(index + 1).padStart(2, '0')} · {pillar.label}</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">{pillar.title}</h2>
             </div>
-          ))}
-        </div>
-      </section>
+            <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+              <p className="text-lg leading-8 text-zinc-300">{pillar.description}</p>
+            </div>
+          </div>
+        </section>
+      ))}
 
-      <section id="platform" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-        <div className="mb-10 max-w-3xl">
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Platform</p>
-          <h2 className="mt-4 text-4xl font-semibold tracking-tight md:text-5xl">Built for production agents, not disconnected demos.</h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          {features.map(([title, description]) => (
-            <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-7">
-              <div className="mb-8 h-9 w-9 rounded-lg border border-white/10 bg-white text-black" />
-              <h3 className="text-xl font-semibold tracking-tight">{title}</h3>
-              <p className="mt-4 leading-7 text-zinc-400">{description}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="modules" className="mx-auto max-w-7xl px-6 pb-24 lg:px-8">
+      <section id="modules" className="mx-auto max-w-7xl scroll-mt-24 px-6 pb-24 pt-12 lg:px-8">
         <div className="mb-10 flex flex-col justify-between gap-4 md:flex-row md:items-end">
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500">Open source</p>
@@ -115,7 +125,7 @@ export default function Home() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {repos.map(([title, description, href]) => (
+          {modules.map(([title, description, href]) => (
             <a
               key={title}
               href={href}
