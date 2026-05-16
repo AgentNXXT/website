@@ -211,9 +211,9 @@ export default function Home() {
                 <li>✓ Scalable from prototype to production</li>
               </ul>
               <div className="mt-10 rounded-lg bg-zinc-50 p-6">
-                <p className="font-medium">Let's Collaborate</p>
+                <p className="font-medium">AGenNext for Businesses</p>
                 <p className="mt-2 text-zinc-600">Whether you're exploring your first AI use case or scaling existing automation, we can help you build solutions that create real operational value.</p>
-                <p className="mt-4 text-zinc-500">📩 Get in touch to discuss your goals</p>
+                <a href="https://github.com/AGenNext/Agent-Commerce" className="mt-4 inline-block text-sm text-[#a100ff] hover:underline">Explore Agent-Commerce →</a>
               </div>
             </div>
           </div>
