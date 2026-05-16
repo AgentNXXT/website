@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import SiteHeader from './components/SiteHeader'
 
 export const metadata: Metadata = {
-  title: 'Frontier Autonomous Agent Research Platform | Autonomyx',
+  title: 'Frontier Autonomous Agent Research Platform | AGenNext',
   description:
-    'Autonomyx is a frontier autonomous agent research platform with concepts, offerings, repositories, and platform capabilities for building human-first agent systems.',
+    'AGenNext is a frontier autonomous agent research platform with concepts, offerings, repositories, and platform capabilities for building human-first agent systems.',
 }
 
 const siteUrl = 'https://site.agnxxt.com'
@@ -76,7 +76,7 @@ const trending = [
 ]
 
 const faqs = [
-  ['What is Autonomyx?', 'Autonomyx is a frontier autonomous agent research platform focused on concepts, offerings, repositories, and platform capabilities for human-first agent systems.'],
+  ['What is AGenNext?', 'AGenNext is a frontier autonomous agent research platform focused on concepts, offerings, repositories, and platform capabilities for human-first agent systems.'],
   ['What are the main differentiators?', 'The Why Us differentiators are Cloud Native, Composable, Full Stack, Frontier Research, and Human First.'],
   ['What are offerings?', 'Offerings are catalog items such as apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and task or industry-specific agents.'],
   ['Is the platform open source?', 'Many AGenNext repositories are public and open source. Some repositories remain private where public details should stay high-level.'],
@@ -91,7 +91,7 @@ export default function Home() {
       <section id="top" className="border-b border-white/15 bg-black">
         <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[280px_1fr] lg:px-8 lg:py-32">
           <div className="border-t border-white pt-5">
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">Autonomyx</p>
+            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">AGenNext</p>
           </div>
           <div>
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Frontier Autonomous Agent Research Platform</p>

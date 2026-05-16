@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import SiteHeader from '../components/SiteHeader'
 
 export const metadata: Metadata = {
-  title: 'Agent Trust Protocol Dashboard | Autonomyx',
+  title: 'Agent Trust Protocol Dashboard | AGenNext',
   description:
     'A dashboard MVP for monitoring agent trust scores, policies, audit events, and evidence streams across autonomous agent systems.',
 }

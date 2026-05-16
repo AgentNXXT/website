@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!repo) return {}
 
   return {
-    title: `${repo.name} | Autonomyx`,
+    title: `${repo.name} | AGenNext`,
     description: repo.centralBenefit,
   }
 }
@@ -87,14 +87,14 @@ export default async function RepoPage({ params }: Props) {
 
           <section>
             <p className="text-xs font-semibold uppercase tracking-[0.22em] text-neutral-500">Comparison</p>
-            <h2 className="mt-4 text-3xl font-semibold tracking-tight">Common approach vs Autonomyx approach</h2>
+            <h2 className="mt-4 text-3xl font-semibold tracking-tight">Common approach vs AGenNext approach</h2>
             <div className="mt-8 grid border-l border-t border-neutral-300 md:grid-cols-2">
               <div className="border-b border-r border-neutral-300 p-7">
                 <h3 className="text-xl font-semibold tracking-tight">Common approach</h3>
                 <p className="mt-4 leading-7 text-neutral-600">Many teams begin with project-specific scripts, separate tools, manual review, or custom workflows. That can work early, but it often becomes harder to search, reuse, govern, and operate as more agents and teams are added.</p>
               </div>
               <div className="border-b border-r border-neutral-300 p-7">
-                <h3 className="text-xl font-semibold tracking-tight">Autonomyx approach</h3>
+                <h3 className="text-xl font-semibold tracking-tight">AGenNext approach</h3>
                 <p className="mt-4 leading-7 text-neutral-600">{repo.centralBenefit} The repository connects that benefit to reusable platform capabilities, source documentation, and a clearer path from concept to implementation.</p>
               </div>
             </div>

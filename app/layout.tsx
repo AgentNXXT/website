@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   description,
   keywords: [
     'AGenNext',
-    'Autonomyx',
+    'AGenNext',
     'frontier autonomous agent research platform',
     'autonomous agent research',
     'autonomous agent platform',
