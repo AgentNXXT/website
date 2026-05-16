@@ -76,6 +76,8 @@ const trending = [
   ['Tools', 'Agent Tools', 'Tool integrations for web search, code execution, API calls, and more.', '#offerings', 'light'],
   ['Agents', 'AI Agents', 'Pre-built agents for coding, research, automation, and business tasks.', '#offerings', 'accent'],
   ['Frameworks', 'Agent Frameworks', 'Open source frameworks for building, orchestrating, and managing agent systems.', '#offerings', 'light'],
+  ['Peer Reviews', 'Gartner Peer Insights', 'Verified reviews from industry peers on AI agent solutions and implementations.', '#offerings', 'light'],
+  ['Wikipedia', 'AI Wikipedia', 'Wiki-based knowledge and references on artificial intelligence, machine learning, and agent systems.', '#offerings', 'light'],
 ]
 
 const faqs = [
