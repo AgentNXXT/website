@@ -1,13 +1,12 @@
 const siteUrl = 'https://site.agnxxt.com'
 
 const navItems = [
-  ['Research Resources', `${siteUrl}/#blog`],
-  ['Concepts', `${siteUrl}/#human-first-world`],
-  ['Solutions', `${siteUrl}/repos/`],
-  ['Platform', `${siteUrl}/#frontier-agent-platform`],
-  ['Learning', `${siteUrl}/#blog`],
-  ['Playgrounds', `${siteUrl}/catalog/`],
-  ['Contact', 'mailto:thefractionalpm@gmail.com'],
+  ['Research Resources', '#blog'],
+  ['Concepts', '#concepts'],
+  ['Solutions', '#offerings'],
+  ['Platform', '#trending'],
+  ['Learning', '#courses'],
+  ['Contact', '#contact'],
 ]
 
 export default function SiteHeader() {
