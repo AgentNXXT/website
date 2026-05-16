@@ -109,6 +109,44 @@ export default function CoursesPage() {
           ))}
         </div>
       </div>
+
+      <div className="mx-auto max-w-7xl border-t border-white/15 px-6 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
+            <h2 className="text-3xl font-semibold">Become an Author</h2>
+            <p className="mt-4 text-zinc-400">
+              Share your expertise with the community. Create courses and help others learn AI agent development.
+            </p>
+            <ul className="mt-6 space-y-3 text-zinc-400">
+              <li>✓ Earn revenue from your courses</li>
+              <li>✓ Build your professional profile</li>
+              <li>✓ Join a community of experts</li>
+            </ul>
+          </div>
+          <div className="rounded-lg border border-white/15 bg-zinc-900/50 p-6">
+            <form className="flex flex-col gap-3">
+              <input 
+                type="text" 
+                placeholder="Your name" 
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <textarea 
+                placeholder="Tell us about your expertise" 
+                rows={3}
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <button type="submit" className="w-full rounded bg-white px-4 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
+                Apply Now
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
   )
 }
