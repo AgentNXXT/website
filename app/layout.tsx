@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 const title = 'AGenNext | Enterprise Agent Lifecycle Governance Platform'
 const description =
@@ -61,7 +62,21 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
+      </body>
     </html>
   )
 }
