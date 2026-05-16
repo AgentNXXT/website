@@ -1,8 +1,9 @@
 import SiteHeader from '../components/SiteHeader'
+import Link from 'next/link'
 
 export const metadata = {
-  title: 'Spectron: AI Agent Memory | AGenNext',
-  description: 'Learn how Spectron provides unified agent memory for AI systems. Store structured data, documents, vectors, and graphs in one place.',
+  title: 'Blog | AGenNext - Articles on AI Agent Development',
+  description: 'Articles on AI agent development, database technology, and agent governance.',
 }
 
 export default function BlogPage() {
@@ -11,6 +12,8 @@ export default function BlogPage() {
       slug: 'spectron-unified-agent-memory',
       title: 'Spectron: AI Agent Memory That Actually Works',
       excerpt: 'How unified agent memory provides a single persistent source of context, state, and history for AI agents.',
+      category: 'AI Memory',
+      tags: ['Artificial Intelligence', 'Machine Learning', 'Database'],
       content: `Spectron is SurrealDB's approach to unified agent memory - giving AI agents a single persistent source of context, state, and history.
 
 ## Why Agent Memory Matters
@@ -57,6 +60,8 @@ CREATE session:user123 SET
       slug: 'model-context-protocol',
       title: 'Model Context Protocol: Connect AI Tools Directly to Data',
       excerpt: 'Connect AI tools like Cursor, VS Code, and Claude directly to your database for context-aware interactions.',
+      category: 'AI Tools',
+      tags: ['Artificial Intelligence', 'Software Development', 'API'],
       content: `Model Context Protocol (MCP) enables AI tools to connect directly to SurrealDB for seamless data access.
 
 ## The Problem
@@ -89,7 +94,9 @@ MCP connects AI tools directly to your database:
     {
       slug: 'rag-graph-retrieval',
       title: 'RAG and Graph RAG: Combine Vectors with Relationships',
-      excerpt: 'Combine vector similarity, graph traversal, and document retrieval in a single query for powerful retrieval-augmented generation.',
+      excerpt: 'Combine vector similarity, graph traversal, and document retrieval in a single query for retrieval-augmented generation.',
+      category: 'AI RAG',
+      tags: ['Artificial Intelligence', 'Machine Learning', 'Natural Language Processing'],
       content: `Graph RAG combines vector search, graph traversal, and document retrieval for more accurate AI responses.
 
 ## Traditional RAG Limitations
@@ -132,6 +139,8 @@ ORDER BY vector::distance(embedding, $query);
       slug: 'real-time-agent-reactivity',
       title: 'Real-time Agent Reactivity',
       excerpt: 'Live queries and event triggers let agents react instantly to changing data for more adaptive behavior.',
+      category: 'AI Reactivity',
+      tags: ['Artificial Intelligence', 'Real-time Computing', 'Event-driven'],
       content: `Real-time agent reactivity enables AI agents to respond instantly to data changes.
 
 ## Why Real-time Matters
@@ -177,6 +186,8 @@ THEN (CREATE alert { ... });
       slug: 'ai-model-integration',
       title: 'AI Model Integration: Call LLMs Directly from Database',
       excerpt: 'Call LLMs, embedding models, or GPU inference directly from within the database via WebAssembly plugins.',
+      category: 'AI Integration',
+      tags: ['Artificial Intelligence', 'Machine Learning', 'WebAssembly'],
       content: `AI model integration brings LLMs directly into your database queries.
 
 ## The Challenge
@@ -222,6 +233,8 @@ WHERE vector::similarity(embedding, $query) > 0.7;
       slug: 'agent-governance',
       title: 'Agent Governance: Fine-grained Permissions for AI',
       excerpt: 'Fine-grained permissions, access control, and audit trails for safe, compliant AI workflows.',
+      category: 'AI Governance',
+      tags: ['Artificial Intelligence', 'Security', 'Compliance'],
       content: `Agent governance provides security and compliance for AI agent systems.
 
 ## Why Governance Matters
@@ -293,11 +306,19 @@ CREATE audit:agent123 SET
               href={`/blog/${article.slug}`}
               className="group block rounded-lg border border-white/15 bg-zinc-900/50 p-6"
             >
-              <p className="text-sm text-zinc-500">{article.date}</p>
+              <div className="flex items-center gap-3">
+                <p className="text-sm text-zinc-500">{article.date}</p>
+                <span className="text-xs text-[#a100ff]">{article.category}</span>
+              </div>
               <h2 className="mt-2 text-xl font-semibold group-hover:text-[#a100ff] transition">
                 {article.title}
               </h2>
               <p className="mt-3 text-zinc-400">{article.excerpt}</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {article.tags.map((tag: string) => (
+                  <span key={tag} className="text-xs text-zinc-500">{tag}</span>
+                ))}
+              </div>
             </a>
           ))}
         </div>
