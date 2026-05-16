@@ -1,8 +1,14 @@
 import SiteHeader from '../components/SiteHeader'
 
 export const metadata = {
-  title: 'Courses | AGenNext',
-  description: 'Learn to build, deploy, and manage autonomous AI agents with AGenNext courses.',
+  title: 'Courses | AGenNext - Learn AI Agent Development',
+  description: 'Learn to build, deploy, and manage autonomous AI agents with AGenNext courses. Master LLMs, coding agents, MCP, and modern AI development.',
+  keywords: ['AI courses', 'agent development', 'LLM training', 'MCP', 'AI agents', 'software development', 'machine learning'],
+  openGraph: {
+    title: 'AGenNext Courses - Learn AI Agent Development',
+    description: 'Master AI-powered software development with hands-on courses. Learn LLMs, coding agents, MCP, and more.',
+    type: 'website',
+  },
 }
 
 const courses = [
