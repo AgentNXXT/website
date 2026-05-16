@@ -191,9 +191,8 @@ export default function Home() {
       </section>
 
       <section id="contact" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
-              <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Latest Updates</h2>
-            </div>
-          </div>
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Latest Updates</h2>
 
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             <a href="#" className="group block">
@@ -221,7 +220,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
+      <section id="latest-updates" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <h2 className="text-4xl font-semibold tracking-[-0.03em]">AGenNext for Businesses</h2>
           <div className="mt-12 grid gap-10 lg:grid-cols-2">
