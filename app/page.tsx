@@ -187,9 +187,9 @@ export default function Home() {
 
       <section id="contact" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-2">
+          <h2 className="text-4xl font-semibold tracking-[-0.03em]">AGenNext for Businesses</h2>
+          <div className="mt-12 grid gap-10 lg:grid-cols-2">
             <div>
-              <h2 className="text-4xl font-semibold tracking-[-0.03em]">Call to Businesses</h2>
               <p className="mt-6 text-lg text-zinc-600">
                 If your business is looking for AI automation, custom AI agents, internal knowledge assistants, website chatbots, or workflow optimization — we design and implement practical AI solutions.
               </p>
