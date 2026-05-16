@@ -98,8 +98,8 @@ export default function Home() {
               An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#offerings" className="bg-white px-8 py-4 text-base font-semibold text-black rounded transition hover:bg-zinc-200 hover:scale-105">Get Started</a>
-              <a href="#trending" className="border border-white/30 bg-transparent px-8 py-4 text-base font-medium text-white rounded transition hover:bg-white/10 hover:scale-105">View Documentation</a>
+              <a href="#offerings" className="bg-black border border-white/30 px-8 py-4 text-base font-semibold text-white rounded transition hover:bg-white hover:text-black hover:scale-105">Get Started</a>
+              <a href="#trending" className="bg-black border border-white/30 px-8 py-4 text-base font-medium text-white rounded transition hover:bg-white hover:text-black hover:scale-105">View Documentation</a>
             </div>
         </div>
       </section>
