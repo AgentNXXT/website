@@ -150,11 +150,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="blog" className="border-b border-white/15 bg-black px-6 py-20 lg:px-8">
+      <section id="courses" className="border-b border-white/15 bg-black px-6 py-20 lg:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Blog</p>
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Courses</p>
+              <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">The Modern Software Developer</h2>
+            </div>
+          </div>
+
+          <div className="mt-14 overflow-x-auto">
+            <table className="w-full min-w-[800px] text-left">
+              <thead>
+                <tr className="border-b border-zinc-800 text-zinc-400">
+                  <th className="pb-4 pr-8 font-medium">Week</th>
+                  <th className="pb-4 pr-8 font-medium">Topic</th>
+                  <th className="pb-4 font-medium">Assignment</th>
+                </tr>
+              </thead>
+              <tbody className="text-zinc-300">
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">1</td><td className="py-4 pr-8">LLMs & Prompting</td><td className="py-4">LLM Playground</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">2</td><td className="py-4 pr-8">Coding Agents & MCP</td><td className="py-4">Build-agent</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">3</td><td className="py-4 pr-8">AI IDEs</td><td className="py-4">MCP Server</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">4</td><td className="py-4 pr-8">Claude Code Patterns</td><td className="py-4">AI Collaboration</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">5</td><td className="py-4 pr-8">Modern Terminals</td><td className="py-4">Warp Scripts</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">6</td><td className="py-4 pr-8">AI Testing & Security</td><td className="py-4">Security Audit</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">7</td><td className="py-4 pr-8">Code Review</td><td className="py-4">AI Reviewer</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">8</td><td className="py-4 pr-8">UI Building</td><td className="py-4">Web Apps</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">9</td><td className="py-4 pr-8">Deployment</td><td className="py-4">Monitoring</td></tr>
+                <tr className="border-b border-zinc-800"><td className="py-4 pr-8">10</td><td className="py-4 pr-8">Future</td><td className="py-4">Final Project</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
               <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Latest Updates</h2>
             </div>
           </div>
