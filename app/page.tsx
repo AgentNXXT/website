@@ -77,12 +77,16 @@ const trending = [
 
 const faqs = [
   ['What is AGenNext?', 'AGenNext is an Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.'],
+  ['Who is AGenNext for?', 'AGenNext serves developers building AI agents, enterprises needing governance, researchers exploring autonomous systems, and teams deploying production-grade agent solutions.'],
   ['What are the main differentiators?', 'Our differentiators include Cloud Native architecture, Composable design, Full Stack capabilities, Frontier Research, and Human First approach.'],
   ['What are offerings?', 'Offerings include apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and task or industry-specific agents.'],
   ['Is the platform open source?', 'Yes, AGenNext is open source. Many repositories are public and available for community contribution.'],
   ['How do I get started?', 'Start with the Offerings catalog or repository pages, then follow the GitHub README links for implementation details.'],
   ['What is Agent Lifecycle Governance?', 'Agent Lifecycle Governance covers the complete lifecycle - from building, testing, deployment, evaluation, security, and ongoing governance of production-grade autonomous agents.'],
   ['What AI Native Applications can I build?', 'You can build AI agents, automation solutions, MCP-powered tools, and enterprise-grade autonomous systems tailored to your business needs.'],
+  ['For Enterprises', 'A governance-ready platform with security, compliance, and enterprise-grade agent management capabilities.'],
+  ['For Developers', 'Open source SDKs, APIs, and tools to build, test and deploy autonomous agents.'],
+  ['For Researchers', 'Frontier research capabilities and platform for experimenting with agent behaviors.'],
 ]
 
 export default function Home() {
