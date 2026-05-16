@@ -95,9 +95,16 @@ export default function CoursesPage() {
                 </ul>
               </div>
 
-              <button className="mt-6 w-full rounded bg-white px-4 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
-                Subscribe
-              </button>
+              <form className="mt-6 flex flex-col gap-3">
+                <input 
+                  type="email" 
+                  placeholder="Enter your email" 
+                  className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+                />
+                <button type="submit" className="w-full rounded bg-white px-4 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
+                  Subscribe
+                </button>
+              </form>
             </div>
           ))}
         </div>
