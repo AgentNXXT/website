@@ -89,7 +89,7 @@ export default function Home() {
       <SiteHeader />
 
       <section id="top" className="border-b border-white/15 bg-black">
-        <div className="mx-auto grid max-w-7xl gap-10 px-6 py-24 lg:grid-cols-[280px_1fr] lg:px-8 lg:py-32">
+        <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-8 lg:py-32">
           <div className="border-t border-white pt-5">
             <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-400">AGenNext</p>
           </div>
@@ -98,10 +98,10 @@ export default function Home() {
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
               Building blocks for human-first autonomous agent systems.
             </h1>
-            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
+            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300 mx-auto">
               Explore concepts, offerings, repositories, and research-led platform capabilities for building agents that are composable, governable, reliable, and practical.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+            <div className="mt-10 flex flex-col gap-4 sm:flex-row justify-center">
               <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Explore Offerings</a>
               <a href="#trending" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">View Trending</a>
             </div>
