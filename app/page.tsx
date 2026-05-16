@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import SiteHeader from './components/SiteHeader'
 
 export const metadata: Metadata = {
-  title: 'Frontier Autonomous Agent Research Platform | AGenNext',
+  title: 'Enterprise Agent Lifecycle Governance Platform | AGenNext',
   description:
-    'AGenNext is a frontier autonomous agent research platform with concepts, offerings, repositories, and platform capabilities for building human-first agent systems.',
+  'An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.',
 }
 
 const siteUrl = 'https://site.agnxxt.com'
