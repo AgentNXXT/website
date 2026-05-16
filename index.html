@@ -90,6 +90,7 @@
     border-radius: 50%;
     background: var(--accent1);
     animation: pulse 2s infinite;
+    box-shadow: 0 0 10px var(--accent1), 0 0 20px var(--accent1);
   }
 
   @keyframes pulse {
@@ -119,10 +120,11 @@
     border: 1px solid var(--accent1);
     color: var(--accent1) !important;
     border-radius: 2px;
-    transition: background 0.2s !important;
+    transition: all 0.2s !important;
+    box-shadow: 0 0 10px rgba(0,245,196,0.2);
   }
 
-  .nav-cta:hover { background: rgba(0,245,196,0.1) !important; }
+  .nav-cta:hover { background: rgba(0,245,196,0.15) !important; box-shadow: 0 0 20px rgba(0,245,196,0.4) !important; }
 
   /* HERO */
   .hero {
@@ -226,11 +228,11 @@
 
   .btn-primary {
     padding: 0.85rem 2rem;
-    background: var(--accent1);
+    background: linear-gradient(135deg, var(--accent1), #00d4b0);
     color: var(--bg);
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.8rem;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: 0.05em;
     border: none;
     cursor: pointer;
@@ -239,11 +241,12 @@
     align-items: center;
     gap: 0.5rem;
     transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 0 20px rgba(0,245,196,0.3);
   }
 
   .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(0,245,196,0.3);
+    box-shadow: 0 8px 40px rgba(0,245,196,0.5);
   }
 
   .btn-ghost {

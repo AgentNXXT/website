@@ -2,6 +2,15 @@
 
 :root {
   color-scheme: dark;
+  --primary: #00f5c4;
+  --primary-hover: #00d4b0;
+  --secondary: #7b2fff;
+  --accent: #ff3d6e;
+  --bg: #000;
+  --surface: #0d0d14;
+  --border: #1a1a2e;
+  --text: #e8e8f0;
+  --muted: #6b6b82;
 }
 
 * {
