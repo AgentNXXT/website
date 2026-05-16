@@ -1,15 +1,5 @@
 const siteUrl = 'https://site.agnxxt.com'
 
-const navItems = [
-  ['Research Resources', `${siteUrl}/#blog`],
-  ['Concepts', `${siteUrl}/#human-first-world`],
-  ['Solutions', `${siteUrl}/repos/`],
-  ['Platform', `${siteUrl}/#frontier-agent-platform`],
-  ['Learning', `${siteUrl}/#blog`],
-  ['Playgrounds', `${siteUrl}/catalog/`],
-  ['Contact', 'mailto:thefractionalpm@gmail.com'],
-]
-
 export default function SiteHeader() {
   return (
     <header className="border-b border-white/15 bg-black text-white">
