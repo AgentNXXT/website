@@ -113,14 +113,14 @@ export default function CoursesPage() {
       <div className="mx-auto max-w-7xl border-t border-white/15 px-6 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <h2 className="text-3xl font-semibold">Co-GTM Partner</h2>
+            <h2 className="text-3xl font-semibold">Co-Brand Partner</h2>
             <p className="mt-4 text-zinc-400">
-              Co-market and co-sell AI agent solutions. Join our go-to-market partner program.
+              Co-brand AI agent solutions with your identity. White-label and customize for your clients.
             </p>
             <ul className="mt-6 space-y-3 text-zinc-400">
-              <li>✓ Co-marketing campaigns</li>
-              <li>✓ Sales enablement</li>
-              <li>✓ Partner portal access</li>
+              <li>✓ White-label options</li>
+              <li>✓ Custom branding</li>
+              <li>✓ Client customization</li>
             </ul>
           </div>
           <div className="rounded-lg border border-white/15 bg-zinc-900/50 p-6">
@@ -136,7 +136,7 @@ export default function CoursesPage() {
                 className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
               />
               <textarea 
-                placeholder="Tell us about your GTM experience" 
+                placeholder="Tell us about your branding needs" 
                 rows={3}
                 className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
               />
