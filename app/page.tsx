@@ -91,7 +91,7 @@ export default function Home() {
       <section id="top" className="border-b border-white/15 bg-black">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-8 lg:py-32">
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
-              Building blocks for human-first autonomous agent systems.
+              Enterprise Agent Lifecycle Governance Platform.
             </h1>
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
               Explore concepts, offerings, repositories, and research-led platform capabilities for building agents that are composable, governable, reliable, and practical.
