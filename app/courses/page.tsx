@@ -113,6 +113,44 @@ export default function CoursesPage() {
       <div className="mx-auto max-w-7xl border-t border-white/15 px-6 py-20 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
+            <h2 className="text-3xl font-semibold">Co-Build with Us</h2>
+            <p className="mt-4 text-zinc-400">
+              Build agent solutions together. Collaborate on open source projects and enterprise implementations.
+            </p>
+            <ul className="mt-6 space-y-3 text-zinc-400">
+              <li>✓ Open source collaboration</li>
+              <li>✓ Joint development</li>
+              <li>✓ Shared resources</li>
+            </ul>
+          </div>
+          <div className="rounded-lg border border-white/15 bg-zinc-900/50 p-6">
+            <form className="flex flex-col gap-3">
+              <input 
+                type="text" 
+                placeholder="Your name" 
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <textarea 
+                placeholder="Tell us about your project" 
+                rows={3}
+                className="w-full rounded border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder:text-zinc-500 focus:border-[#a100ff] focus:outline-none"
+              />
+              <button type="submit" className="w-full rounded bg-white px-4 py-3 text-center font-medium text-black transition hover:bg-zinc-200">
+                Start Building
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div className="mx-auto max-w-7xl border-t border-white/15 px-6 py-20 lg:px-8">
+        <div className="grid gap-10 lg:grid-cols-2">
+          <div>
             <h2 className="text-3xl font-semibold">Become a Channel Partner</h2>
             <p className="mt-4 text-zinc-400">
               Partner with us to deliver AI agent solutions to your clients. Build your business with AGenNext.
