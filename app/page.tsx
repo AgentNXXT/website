@@ -76,11 +76,13 @@ const trending = [
 ]
 
 const faqs = [
-  ['What is AGenNext?', 'AGenNext is a frontier autonomous agent research platform focused on concepts, offerings, repositories, and platform capabilities for human-first agent systems.'],
-  ['What are the main differentiators?', 'The Why Us differentiators are Cloud Native, Composable, Full Stack, Frontier Research, and Human First.'],
-  ['What are offerings?', 'Offerings are catalog items such as apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and task or industry-specific agents.'],
-  ['Is the platform open source?', 'Many AGenNext repositories are public and open source. Some repositories remain private where public details should stay high-level.'],
+  ['What is AGenNext?', 'AGenNext is an Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.'],
+  ['What are the main differentiators?', 'Our differentiators include Cloud Native architecture, Composable design, Full Stack capabilities, Frontier Research, and Human First approach.'],
+  ['What are offerings?', 'Offerings include apps, agents, APIs, SDKs, runtimes, CLIs, MCP components, prompts, skills, and task or industry-specific agents.'],
+  ['Is the platform open source?', 'Yes, AGenNext is open source. Many repositories are public and available for community contribution.'],
   ['How do I get started?', 'Start with the Offerings catalog or repository pages, then follow the GitHub README links for implementation details.'],
+  ['What is Agent Lifecycle Governance?', 'Agent Lifecycle Governance covers the complete lifecycle - from building, testing, deployment, evaluation, security, and ongoing governance of production-grade autonomous agents.'],
+  ['What AI Native Applications can I build?', 'You can build AI agents, automation solutions, MCP-powered tools, and enterprise-grade autonomous systems tailored to your business needs.'],
 ]
 
 export default function Home() {
