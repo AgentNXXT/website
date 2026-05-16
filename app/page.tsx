@@ -87,6 +87,10 @@ const faqs = [
   ['For Enterprises', 'A governance-ready platform with security, compliance, and enterprise-grade agent management capabilities.'],
   ['For Developers', 'Open source SDKs, APIs, and tools to build, test and deploy autonomous agents.'],
   ['For Researchers', 'Frontier research capabilities and platform for experimenting with agent behaviors.'],
+  ['Familiarity — We Speak Your Language', 'We teach AI in a way that is clear, practical, and easy to understand for business owners, creators, working professionals, students, and non-technical beginners.'],
+  ['Relevance — We Teach What Actually Works', 'We focus on real-world application - how AI is used in actual business environments, which tools are dependable, and where AI systems commonly fail.'],
+  ['Practical — No Jargon. No Fluff. Just Action', 'Every lesson is designed to help you do something useful right away. No textbook-heavy theory or buzzwords - just implementation.'],
+  ['Useful — Turn AI Skills Into Income', 'We show you what clients and employers are paying for, which AI services are in highest demand, and how to package skills into sellable solutions.'],
 ]
 
 export default function Home() {
@@ -142,6 +146,76 @@ export default function Home() {
                 <p className="text-sm font-semibold group-hover:underline">Expand →</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" className="border-b border-white/15 bg-black px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Blog</p>
+              <h2 className="mt-5 max-w-4xl text-4xl font-semibold tracking-[-0.03em] md:text-6xl">Latest Updates</h2>
+            </div>
+          </div>
+
+          <div className="mt-14 grid gap-8 md:grid-cols-3">
+            <a href="#" className="group block">
+              <div className="aspect-video overflow-hidden rounded-lg bg-zinc-900">
+                <div className="h-full w-full bg-zinc-800 group-hover:bg-zinc-700 transition" />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold">Getting Started with Agent Governance</h3>
+              <p className="mt-2 text-zinc-400">Learn the fundamentals of building and managing autonomous agents in production.</p>
+            </a>
+            <a href="#" className="group block">
+              <div className="aspect-video overflow-hidden rounded-lg bg-zinc-900">
+                <div className="h-full w-full bg-zinc-800 group-hover:bg-zinc-700 transition" />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold">MCP Integration Best Practices</h3>
+              <p className="mt-2 text-zinc-400">How to integrate Model Context Protocol into your agent workflows.</p>
+            </a>
+            <a href="#" className="group block">
+              <div className="aspect-video overflow-hidden rounded-lg bg-zinc-900">
+                <div className="h-full w-full bg-zinc-800 group-hover:bg-zinc-700 transition" />
+              </div>
+              <h3 className="mt-4 text-xl font-semibold">Building Enterprise Agents</h3>
+              <p className="mt-2 text-zinc-400">A comprehensive guide to building production-grade autonomous agents.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-white text-neutral-950 px-6 py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-2">
+            <div>
+              <h2 className="text-4xl font-semibold tracking-[-0.03em]">Call to Businesses</h2>
+              <p className="mt-6 text-lg text-zinc-600">
+                If your business is looking for AI automation, custom AI agents, internal knowledge assistants, website chatbots, or workflow optimization — we design and implement practical AI solutions.
+              </p>
+              <ul className="mt-8 space-y-4 text-zinc-600">
+                <li>✦ Custom GPT-powered assistants</li>
+                <li>✦ Internal knowledge bots for teams</li>
+                <li>✦ CRM and workflow automations</li>
+                <li>✦ Customer support chatbots</li>
+                <li>✦ Lead qualification systems</li>
+                <li>✦ AI-powered reporting and insights</li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="text-2xl font-semibold">Why Work With Us?</h3>
+              <ul className="mt-6 space-y-4 text-zinc-600">
+                <li>✓ Built for your specific business processes</li>
+                <li>✓ Delivered by vetted AI specialists</li>
+                <li>✓ Focused on measurable business outcomes</li>
+                <li>✓ Scalable from prototype to production</li>
+              </ul>
+              <div className="mt-10 rounded-lg bg-zinc-50 p-6">
+                <p className="font-medium">Let's Collaborate</p>
+                <p className="mt-2 text-zinc-600">Whether you're exploring your first AI use case or scaling existing automation, we can help you build solutions that create real operational value.</p>
+                <p className="mt-4 text-zinc-500">📩 Get in touch to discuss your goals</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
