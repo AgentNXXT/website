@@ -97,9 +97,9 @@ export default function Home() {
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
               An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
             </p>
-            <div className="mt-10 flex gap-4">
-              <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Get Started</a>
-              <a href="#trending" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">View Documentation</a>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#offerings" className="bg-white px-8 py-4 text-base font-semibold text-black rounded transition hover:bg-zinc-200 hover:scale-105">Get Started</a>
+              <a href="#trending" className="border border-white/30 bg-transparent px-8 py-4 text-base font-medium text-white rounded transition hover:bg-white/10 hover:scale-105">View Documentation</a>
             </div>
         </div>
       </section>
