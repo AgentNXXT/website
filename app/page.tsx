@@ -93,8 +93,9 @@ export default function Home() {
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
               Enterprise Agent Lifecycle Governance Platform.
             </h1>
+            <p className="mt-4 text-lg font-medium text-zinc-400">A Unified Platform</p>
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
-              An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
+              Explore concepts, offerings, repositories, and research-led platform capabilities for building agents that are composable, governable, reliable, and practical.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
               <a href="#offerings" className="bg-black border border-white/30 px-8 py-4 text-base font-semibold text-white rounded transition hover:bg-white hover:text-black hover:scale-105">Get Started</a>
