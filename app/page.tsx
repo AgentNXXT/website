@@ -93,6 +93,7 @@ export default function Home() {
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
               Enterprise Agent Lifecycle Governance Platform.
             </h1>
+            <p className="mt-4 text-lg font-medium text-zinc-400">A Unified Platform</p>
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
               Explore concepts, offerings, repositories, and research-led platform capabilities for building agents that are composable, governable, reliable, and practical.
             </p>
