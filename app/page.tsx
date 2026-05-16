@@ -69,10 +69,13 @@ const offerings = [
 ]
 
 const trending = [
-  ['Perspective', 'From agent experiments to intelligent enterprise systems', 'How teams can move from isolated prototypes to governed, reusable agent platforms.', '#why-us', 'light'],
-  ['Announcement', 'Offerings catalog for apps, agents, APIs, prompts, and skills', 'Explore platform building blocks across App, Agent, API, SDK, Runtime, CLI, MCP, Prompt, and Skill categories.', '#offerings', 'accent'],
-  ['Research Report', 'Reliable AI for production agent workflows', 'Evaluation, observability, governance, and lifecycle management for dependable autonomous systems.', '#concepts', 'dark'],
-  ['Research Report', 'Human-first autonomous agent systems', 'A practical framing for trust, governance, and human oversight in the Agent World.', '#why-us', 'image'],
+  ['Skills', 'Agent Skills', 'Reusable skills packaged as portable building blocks across agent runtimes.', '#offerings', 'light'],
+  ['BluePrints', 'Agent Blueprints', 'Architecture patterns and templates for building enterprise agent systems.', '#offerings', 'accent'],
+  ['Models', 'AI Models', 'Integration support for major AI providers and model selection.', '#offerings', 'dark'],
+  ['Prompts', 'Prompt Templates', 'Optimized prompts for common agent workflows and tasks.', '#offerings', 'image'],
+  ['Tools', 'Agent Tools', 'Tool integrations for web search, code execution, API calls, and more.', '#offerings', 'light'],
+  ['Agents', 'AI Agents', 'Pre-built agents for coding, research, automation, and business tasks.', '#offerings', 'accent'],
+  ['Frameworks', 'Agent Frameworks', 'Open source frameworks for building, orchestrating, and managing agent systems.', '#offerings', 'light'],
 ]
 
 const faqs = [
