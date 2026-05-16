@@ -91,7 +91,6 @@ export default function Home() {
       <section id="top" className="border-b border-white/15 bg-black">
         <div className="mx-auto max-w-7xl px-6 py-24 text-center lg:px-8 lg:py-32">
           <div>
-            <p className="text-sm font-medium uppercase tracking-[0.22em] text-zinc-500">Frontier Autonomous Agent Research Platform</p>
             <h1 className="mt-6 max-w-5xl text-5xl font-semibold leading-[0.95] tracking-[-0.04em] md:text-7xl">
               Building blocks for human-first autonomous agent systems.
             </h1>
