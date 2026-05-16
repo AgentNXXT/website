@@ -95,11 +95,11 @@ export default function Home() {
             </h1>
             <p className="mt-4 text-lg font-medium text-zinc-400">A Unified Platform</p>
             <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
-              An Open Source Code First Unified Agent Platform to Build, Text, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
+              An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
             </p>
             <div className="mt-10 flex gap-4">
-              <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Explore Offerings</a>
-              <a href="#trending" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">View Trending</a>
+              <a href="#offerings" className="bg-white px-6 py-3 text-center font-medium text-black transition hover:bg-zinc-200">Get Started</a>
+              <a href="#trending" className="border border-white/20 px-6 py-3 text-center font-medium transition hover:bg-white/10">View Documentation</a>
             </div>
         </div>
       </section>
