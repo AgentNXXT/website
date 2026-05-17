@@ -8,6 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "deploy": "npx wrangler pages deploy out",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

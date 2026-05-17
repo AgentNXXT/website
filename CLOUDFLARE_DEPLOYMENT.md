@@ -2,9 +2,13 @@
 
 ## Build Settings
 - Framework preset: None
-- Build command: npm run check && npm run build
+- Build command: npm run build
 - Build output directory: out
 - Node.js version: 20
+
+## Deploy Command (Cloudflare Dashboard)
+- Build command: npm run build
+- Deploy command: npx wrangler pages deploy out
 
 ## Custom Domain
 - site.agnxxt.com
