@@ -16,6 +16,9 @@
   body {
     font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 300;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
@@ -26,15 +29,21 @@
   main {
     text-align: center;
     padding: 2rem;
+    max-width: 800px;
   }
   h1 {
     font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 300;
-    letter-spacing: -0.08em;
-    line-height: 0.9;
-    font-stretch: 85%;
+    letter-spacing: -0.06em;
+    line-height: 1.1;
+    margin-bottom: 1rem;
   }
-  p { margin-top: 1.5rem; color: #888; font-size: 1.1rem; }
+  p { 
+    margin-top: 1.5rem; 
+    color: #888; 
+    font-size: 1.1rem;
+    letter-spacing: 0.02em;
+  }
   a {
     display: inline-block;
     margin-top: 2rem;
@@ -55,6 +64,9 @@
 <h1>Enterprise Agent Lifecycle Governance Platform.</h1>
 <p>An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.</p>
 <a href="https://github.com/AGenNext/Agent-Site">View on GitHub</a>
+<div style="margin-top:2rem;font-size:0.9rem;color:#666;">
+  Site deployed via Cloudflare Pages
+</div>
 </main>
 </body>
 </html>

@@ -104,16 +104,16 @@ export default function Home() {
       <SiteHeader />
 
       <section id="top" className="border-b border-white/15 bg-black">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-24 text-center lg:px-8 lg:py-32">
-            <h1 className="mt-6 max-w-5xl text-5xl font-light tracking-[-0.08em] leading-[0.85] md:text-7xl font-[85%]">
+        <div className="mx-auto flex max-w-7xl flex-col items-center justify-center px-6 py-28 text-center lg:px-8 lg:py-36">
+            <h1 className="mt-6 max-w-5xl text-4xl font-light tracking-tight leading-tight md:text-6xl lg:text-7xl text-white">
               Enterprise Agent Lifecycle Governance Platform.
             </h1>
-            <p className="mt-8 max-w-3xl text-xl leading-8 text-zinc-300">
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-zinc-400">
               An Open Source Code First Unified Agent Platform to Build, Test, Deploy, Eval, Secure & Govern Production Grade Enterprise Autonomous Agents & AI Native Applications & Artifacts.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="#offerings" className="bg-black border border-white/30 px-8 py-4 text-base font-semibold text-white rounded transition hover:bg-white hover:text-black hover:scale-105">Get Started</a>
-              <a href="#trending" className="bg-black border border-white/30 px-8 py-4 text-base font-medium text-white rounded transition hover:bg-white hover:text-black hover:scale-105">View Documentation</a>
+              <a href="#offerings" className="bg-white text-black px-8 py-3 text-base font-medium rounded transition hover:bg-zinc-200">Get Started</a>
+              <a href="#trending" className="bg-black border border-white/20 px-8 py-3 text-base font-medium text-white rounded transition hover:border-white">View Documentation</a>
             </div>
         </div>
       </section>
